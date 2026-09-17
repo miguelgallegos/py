@@ -66,6 +66,17 @@ LOG_DIR = os.environ.get("SOXL_BOT_LOG_DIR", os.path.join(os.path.dirname(__file
 # will simply no-op or error on holidays, which is handled below.
 RESPECT_MARKET_HOURS = os.environ.get("SOXL_BOT_RESPECT_MARKET_HOURS", "true").lower() != "false"
 
+# Allow the bot to evaluate and optionally place trades after regular hours.
+# When false, the script still logs the BUY/SELL signal but refuses to send
+# a live Robinhood order outside regular hours.
+ALLOW_AFTER_HOURS = os.environ.get("SOXL_BOT_ALLOW_AFTER_HOURS", "false").lower() == "true"
+
+# Optional signal-only mode for automation integrations: compute the signal,
+# log the final action, and exit without submitting any order. This is useful
+# when a downstream system or manual workflow wants to execute the captured
+# BUY/SELL decision later.
+SIGNAL_ONLY = os.environ.get("SOXL_BOT_SIGNAL_ONLY", "false").lower() == "true"
+
 # TEST MODE IS ON BY DEFAULT. The bot will log every decision it *would*
 # make (including simulated buy/sell details) but will not place any real
 # orders, until you explicitly set SOXL_BOT_LIVE_TRADING=true in the
@@ -76,7 +87,7 @@ TEST_MODE = not LIVE_TRADING
 
 def _init_logging() -> logging.Logger:
     os.makedirs(LOG_DIR, exist_ok=True)
-    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H-%M-%S")
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     log_file = os.path.join(LOG_DIR, f"soxl_bot_{timestamp}.log")
 
     logger = logging.getLogger("soxl_bot")
@@ -100,6 +111,7 @@ log = _init_logging()
 log.info(f"Log file for this run: {log.handlers[0].baseFilename}")
 log.info(f"Mode: {'LIVE TRADING' if LIVE_TRADING else 'TEST MODE (no orders will be placed)'}")
 log.info(f"Thresholds: buy={BUY_THRESHOLD * 100:+.2f}% sell={SELL_THRESHOLD * 100:+.2f}%")
+log.info(f"Market-hours enforcement: respect={RESPECT_MARKET_HOURS} allow_after_hours={ALLOW_AFTER_HOURS} signal_only={SIGNAL_ONLY}")
 
 
 # ----------------------------------------------------------------------
@@ -211,9 +223,12 @@ def place_sell(quantity: float):
 # Main
 # ----------------------------------------------------------------------
 def main():
-    if RESPECT_MARKET_HOURS and not market_is_open_now():
-        log.info("Outside regular market hours (America/New_York 9:30-16:00, Mon-Fri). Skipping this run.")
-        return
+    is_market_open = market_is_open_now()
+    if RESPECT_MARKET_HOURS and not is_market_open and not ALLOW_AFTER_HOURS:
+        log.info("Outside regular market hours and SOXL_BOT_ALLOW_AFTER_HOURS is false. "
+                 "Computing the signal only; no live order will be placed.")
+    elif RESPECT_MARKET_HOURS and not is_market_open and ALLOW_AFTER_HOURS:
+        log.info("Outside regular market hours, but SOXL_BOT_ALLOW_AFTER_HOURS=true. Trading is enabled.")
 
     login()
 
@@ -233,9 +248,34 @@ def main():
         return
 
     pct_change = (current_price - reference_price) / reference_price
-    log.info(f"Change since last check: {pct_change * 100:.3f}%")
-
+    signal = None
     if pct_change <= BUY_THRESHOLD:
+        signal = "BUY"
+    elif pct_change >= SELL_THRESHOLD:
+        signal = "SELL"
+
+    log.info(f"Change since last check: {pct_change * 100:.3f}%")
+    if signal:
+        log.info(f"SIGNAL: {signal} at {pct_change * 100:.3f}% vs thresholds buy={BUY_THRESHOLD * 100:.2f}% sell={SELL_THRESHOLD * 100:.2f}%")
+        log.info(f"FINAL ACTION: {signal}")
+
+    if SIGNAL_ONLY:
+        log.info("SOXL_BOT_SIGNAL_ONLY=true: signal captured only; no live order will be placed.")
+        save_state({
+            "reference_price": current_price,
+            "last_checked": datetime.now(timezone.utc).isoformat(),
+        })
+        return
+
+    if RESPECT_MARKET_HOURS and not is_market_open and not ALLOW_AFTER_HOURS:
+        log.info(f"Regular market is closed; signal captured but no order will be sent. Manual execution recommended for {signal}.")
+        save_state({
+            "reference_price": current_price,
+            "last_checked": datetime.now(timezone.utc).isoformat(),
+        })
+        return
+
+    if signal == "BUY":
         buying_power = get_buying_power()
         if buying_power < 1.0:
             log.warning(f"Buy signal triggered but buying power (${buying_power:.2f}) is too low. Skipping.")
@@ -248,7 +288,7 @@ def main():
                 log.info(f"Pyramiding buy: {buy_fraction * 100:.0f}% of buying power (${buy_amount:.2f})")
                 place_buy(buy_amount)
 
-    elif pct_change >= SELL_THRESHOLD:
+    elif signal == "SELL":
         qty = get_position_quantity()
         if qty <= 0:
             log.info("Sell signal triggered but no shares are currently held. Nothing to sell.")

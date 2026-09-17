@@ -14,3 +14,4 @@ logs/
 results.txt
 data/
 *.csv
+soxl_bot_state.json
