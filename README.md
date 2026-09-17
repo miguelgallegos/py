@@ -23,6 +23,7 @@ This is the strongest daily-window profile found in the 2025-09-15 to 2026-09-15
 See the project README here:
 
 - [trading_simple_001/README.md](trading_simple_001/README.md)
+- [vehicle_analysis_report.md](vehicle_analysis_report.md)
 
 ## Quick start
 

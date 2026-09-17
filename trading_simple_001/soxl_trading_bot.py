@@ -99,6 +99,7 @@ def _init_logging() -> logging.Logger:
 log = _init_logging()
 log.info(f"Log file for this run: {log.handlers[0].baseFilename}")
 log.info(f"Mode: {'LIVE TRADING' if LIVE_TRADING else 'TEST MODE (no orders will be placed)'}")
+log.info(f"Thresholds: buy={BUY_THRESHOLD * 100:+.2f}% sell={SELL_THRESHOLD * 100:+.2f}%")
 
 
 # ----------------------------------------------------------------------
