@@ -50,7 +50,7 @@ from zoneinfo import ZoneInfo
 import robin_stocks.robinhood as rh
 
 from config import SYMBOL, BUY_THRESHOLD, SELL_THRESHOLD
-from strategy import calculate_buy_fraction
+from strategy import calculate_buy_fraction, calculate_position_pnl_pct
 
 # ----------------------------------------------------------------------
 # Config
@@ -183,6 +183,13 @@ def get_position_quantity() -> float:
     return 0.0
 
 
+def get_position_average_cost_basis() -> float:
+    positions = rh.account.build_holdings()
+    if SYMBOL in positions:
+        return float(positions[SYMBOL].get("average_buy_price", 0.0))
+    return 0.0
+
+
 def place_buy(amount_dollars: float):
     if TEST_MODE:
         log.info(f"[TEST MODE] BUY signal -> would place fractional order for ${amount_dollars:.2f} of {SYMBOL}. "
@@ -293,7 +300,14 @@ def main():
         if qty <= 0:
             log.info("Sell signal triggered but no shares are currently held. Nothing to sell.")
         else:
-            place_sell(qty)
+            avg_cost = get_position_average_cost_basis()
+            pnl_pct = calculate_position_pnl_pct(current_price, avg_cost)
+            log.info(f"Position P/L check: current_price=${current_price:.4f}, avg_cost=${avg_cost:.4f}, pnl_pct={pnl_pct*100:.2f}%")
+            if pnl_pct >= SELL_THRESHOLD:
+                place_sell(qty)
+            else:
+                log.info(f"Position is still below the configured sell threshold for the stack; holding position. "
+                         f"Current P/L={pnl_pct*100:.2f}% vs sell target={SELL_THRESHOLD*100:.2f}%")
 
     else:
         log.info("No threshold crossed. No action taken this run.")

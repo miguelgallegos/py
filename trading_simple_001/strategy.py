@@ -5,6 +5,13 @@ from config import BUY_THRESHOLD
 DEFAULT_LADDER = (0.35, 0.75, 1.0)
 
 
+def calculate_position_pnl_pct(current_price: float, average_cost_basis: float) -> float:
+    """Return position P/L % using average cost basis, not the last reference move."""
+    if average_cost_basis <= 0:
+        return 0.0
+    return (current_price - average_cost_basis) / average_cost_basis
+
+
 def calculate_buy_fraction(pct_change: float, buy_threshold: float = BUY_THRESHOLD,
                           ladder: tuple = DEFAULT_LADDER) -> float:
     """Return the fraction of remaining buying power to deploy.
