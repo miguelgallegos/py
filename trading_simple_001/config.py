@@ -5,5 +5,5 @@ thresholds the live bot uses.
 """
 
 SYMBOL = "SOXL"
-BUY_THRESHOLD = -0.02   # -2%
-SELL_THRESHOLD = 0.04   # +4%
+BUY_THRESHOLD = -0.025  # -2.5%
+SELL_THRESHOLD = 0.035  # +3.5%

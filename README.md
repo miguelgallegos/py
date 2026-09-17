@@ -13,12 +13,12 @@ This repository contains a small set of Python experiments and trading tools, wi
 
 The SOXL bot in `trading_simple_001` is tuned for maximum upside in strong downtrends:
 
-- Buy trigger: -2%
-- Sell trigger: +4%
+- Buy trigger: -2.5%
+- Sell trigger: +3.5%
 - Pyramiding ladder: 35% / 75% / 100% of available buying power as the drop deepens
 - Goal: add size aggressively during falling price streaks, then exit the entire stack on the first strong recovery
 
-This is the high-result profile that prioritizes momentum continuation on pullbacks while still keeping the exit logic disciplined.
+This is the strongest daily-window profile found in the 2025-09-15 to 2026-09-15 backtest sweep for the current ladder logic.
 
 See the project README here:
 

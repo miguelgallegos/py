@@ -1,3 +1,14 @@
+Ladder version:
+
+Backtest: SOXL  2025-09-15 -> 2026-09-15  interval=1d  (251 bars)
+Thresholds:         buy <= -1.50%   sell >= +4.50%
+Starting cash:      $50,000.00
+Strategy equity:    $210,638.49   (+321.28%)
+Buy & hold equity:  $168,550.00   (+237.10%)
+Trades simulated:   98  (54 buys, 44 sells)
+Ending position:    2082.8488 shares, $0.00 cash
+
+All Cash In Version:
 ================================================================
 Backtest: SOXL  2025-09-15 -> 2026-09-15  interval=1d  (251 bars)
 Thresholds:         buy <= -2.00%   sell >= +4.00%

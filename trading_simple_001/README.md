@@ -8,13 +8,13 @@ on a schedule (e.g. every 2 minutes) via cron.
 
 - Every run, the bot compares the current price to a **reference price**
   saved from the previous run (`soxl_bot_state.json`).
-- Price down ≥2% from the reference → **buy**, using a pyramided amount of
+- Price down ≥2.5% from the reference → **buy**, using a pyramided amount of
   available buying power. This is intentionally tuned for maximum-results
   momentum capture.
 - The pyramiding ladder is: 35% of available cash on the first qualifying
   drop, 75% on a deeper pullback, and 100% once the decline is strong enough
   to confirm a trend continuation.
-- Price up ≥4% from the reference → **sell** the entire current SOXL
+- Price up ≥3.5% from the reference → **sell** the entire current SOXL
   position.
 - After every run — trade or no trade — the reference price resets to the
   current price. This makes the band "rolling" (measuring the move since
