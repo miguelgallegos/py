@@ -11,11 +11,14 @@ This repository contains a small set of Python experiments and trading tools, wi
 
 ## Active strategy
 
-The SOXL bot in `trading_simple_001` uses:
+The SOXL bot in `trading_simple_001` is tuned for maximum upside in strong downtrends:
 
 - Buy trigger: -2%
 - Sell trigger: +4%
-- Pyramiding: deeper downturns add more size aggressively before the sell exit fires
+- Pyramiding ladder: 35% / 75% / 100% of available buying power as the drop deepens
+- Goal: add size aggressively during falling price streaks, then exit the entire stack on the first strong recovery
+
+This is the high-result profile that prioritizes momentum continuation on pullbacks while still keeping the exit logic disciplined.
 
 See the project README here:
 
