@@ -1,0 +1,9 @@
+Flask>=2.3
+python-dotenv>=1.0
+requests>=2.31
+alpaca-py>=0.43.4
+krakenex>=0.1.35
+robin_stocks>=2.0.0
+webull-openapi-python-sdk>=2.0.5
+gunicorn>=21.0
+pytest>=8.4.0

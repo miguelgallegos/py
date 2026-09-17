@@ -1,0 +1,6 @@
+runtime: python312
+entrypoint: gunicorn -b :$PORT app:app
+
+env_variables:
+  APP_ENV: "production"
+  TEST_MODE: "false"
