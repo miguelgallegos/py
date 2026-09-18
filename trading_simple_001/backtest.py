@@ -104,10 +104,28 @@ def simulate_backtest(data, starting_cash: float, buy_threshold: float,
     return rows, trades, final_equity
 
 
+def format_summary(symbol: str, start: str, end: str, interval: str, buy_threshold: float,
+                   sell_threshold: float, starting_cash: float, final_equity: float,
+                   buy_hold_equity: float, bar_count: int, trade_count: int,
+                   buy_count: int, sell_count: int, ending_shares: float,
+                   ending_cash: float) -> str:
+    # This formatter intentionally mirrors the historical result text exactly.
+    summary = (
+        f"Backtest: {symbol}  {start} -> {end}  interval={interval}  ({bar_count} bars)\n"
+        f"Thresholds:         buy <= {buy_threshold * 100:+.2f}%   sell >= {sell_threshold * 100:+.2f}%\n"
+        f"Starting cash:      ${starting_cash:,.2f}\n"
+        f"Strategy equity:    ${final_equity:,.2f}   ({(final_equity / starting_cash - 1) * 100:+.2f}%)\n"
+        f"Buy & hold equity:  ${buy_hold_equity:,.2f}   ({(buy_hold_equity / starting_cash - 1) * 100:+.2f}%)\n"
+        f"Trades simulated:   {trade_count}  ({buy_count} buys, {sell_count} sells)\n"
+        f"Ending position:    {ending_shares:.4f} shares, ${ending_cash:,.2f} cash\n"
+    )
+    return summary
+
+
 def run_backtest(symbol: str, start: str, end: str, starting_cash: float,
                   interval: str = "1d", buy_threshold: float = BUY_THRESHOLD,
                   sell_threshold: float = SELL_THRESHOLD, use_cache: bool = True,
-                  ladder: tuple = (0.35, 0.75, 1.0)):
+                  ladder: tuple = (0.35, 0.75, 1.0), summary_file: str | None = None):
     data = load_price_data(symbol, start, end, interval=interval, use_cache=use_cache)
     rows, trades, final_equity = simulate_backtest(data, starting_cash, buy_threshold, sell_threshold)
 
@@ -149,21 +167,38 @@ def run_backtest(symbol: str, start: str, end: str, starting_cash: float,
         reference_price = price
     final_equity = cash + shares * final_price
 
+    trade_total = sum(1 for t in trades if t[1] in {"BUY", "SELL"})
+    summary = format_summary(
+        symbol=symbol,
+        start=start,
+        end=end,
+        interval=interval,
+        buy_threshold=buy_threshold,
+        sell_threshold=sell_threshold,
+        starting_cash=starting_cash,
+        final_equity=final_equity,
+        buy_hold_equity=buy_hold_equity,
+        bar_count=len(data),
+        trade_count=trade_total,
+        buy_count=sum(1 for t in trades if t[1] == "BUY"),
+        sell_count=sum(1 for t in trades if t[1] == "SELL"),
+        ending_shares=shares,
+        ending_cash=cash,
+    )
+
     print("\n" + "=" * 64)
-    print(f"Backtest: {symbol}  {start} -> {end}  interval={interval}  ({len(data)} bars)")
-    print(f"Thresholds:         buy <= {buy_threshold*100:+.2f}%   sell >= {sell_threshold*100:+.2f}%")
-    print(f"Starting cash:      ${starting_cash:,.2f}")
-    print(f"Strategy equity:    ${final_equity:,.2f}   ({(final_equity / starting_cash - 1) * 100:+.2f}%)")
-    print(f"Buy & hold equity:  ${buy_hold_equity:,.2f}   ({(buy_hold_equity / starting_cash - 1) * 100:+.2f}%)")
-    print(f"Trades simulated:   {len(trades)}  ({sum(1 for t in trades if t[1] == 'BUY')} buys, "
-          f"{sum(1 for t in trades if t[1] == 'SELL')} sells)")
-    print(f"Ending position:    {shares:.4f} shares, ${cash:,.2f} cash")
+    print(summary, end="")
     print("=" * 64)
     if interval == "1d":
         print("NOTE: daily bars stand in for the live bot's 2-minute checks - each bar covers a")
         print("full day's cumulative move, so this triggers trades far more readily per-check than")
         print("real 2-minute checks would, while also having ~195x fewer checks per day than live.")
         print("Pass --interval 2m (or 5m/15m) for a closer approximation - see README.md.")
+
+    if summary_file:
+        output_path = Path(summary_file)
+        output_path.write_text(summary, encoding="utf-8")
+        print(f"Summary written to {output_path}")
 
     return rows, trades
 
@@ -239,12 +274,14 @@ def main():
     parser.add_argument("--sell-threshold", type=float, default=SELL_THRESHOLD,
                          help=f"Sell trigger as a decimal, e.g. 0.01 for +1%% (default: {SELL_THRESHOLD})")
     parser.add_argument("--csv", default=None, help="Optional path to write the bar-by-bar results as CSV")
+    parser.add_argument("--summary-file", default=None, help="Optional path to write the formatted human summary text")
     args = parser.parse_args()
 
     rows, _ = run_backtest(args.symbol, args.start, args.end, args.cash,
                             interval=args.interval,
                             buy_threshold=args.buy_threshold,
-                            sell_threshold=args.sell_threshold)
+                            sell_threshold=args.sell_threshold,
+                            summary_file=args.summary_file)
 
     if args.csv:
         import csv

@@ -55,7 +55,10 @@ from strategy import calculate_buy_fraction, calculate_position_pnl_pct
 # ----------------------------------------------------------------------
 # Config
 # ----------------------------------------------------------------------
-STATE_FILE = os.environ.get("SOXL_BOT_STATE_FILE", os.path.join(os.path.dirname(__file__), "soxl_bot_state.json"))
+STATE_FILE = os.environ.get(
+    "TRADING_BOT_STATE_FILE",
+    os.environ.get("SOXL_BOT_STATE_FILE", os.path.join(os.path.dirname(__file__), "trading_bot_state.json")),
+)
 
 # Each run gets its own log file (rather than one continuously-appended file).
 # Files land in SOXL_BOT_LOG_DIR/soxl_bot_<UTC timestamp>.log.
@@ -156,15 +159,60 @@ def login():
 
 
 def load_state() -> dict:
-    if os.path.exists(STATE_FILE):
-        with open(STATE_FILE, "r") as f:
-            return json.load(f)
+    if not os.path.exists(STATE_FILE):
+        legacy_path = os.path.join(os.path.dirname(__file__), "soxl_bot_state.json")
+        if os.path.exists(legacy_path):
+            try:
+                with open(legacy_path, "r") as f:
+                    legacy_state = json.load(f)
+            except (json.JSONDecodeError, OSError):
+                return {}
+            if isinstance(legacy_state, dict) and "reference_price" in legacy_state:
+                payload = {"symbols": {"SOXL": legacy_state}}
+                with open(STATE_FILE, "w") as f:
+                    json.dump(payload, f, indent=2)
+                if SYMBOL == "SOXL":
+                    return legacy_state
+                return {}
+        return {}
+
+    with open(STATE_FILE, "r") as f:
+        payload = json.load(f)
+
+    if not isinstance(payload, dict):
+        return {}
+
+    symbols = payload.get("symbols")
+    if isinstance(symbols, dict):
+        return symbols.get(SYMBOL, {})
+
+    if "reference_price" in payload:
+        return payload if SYMBOL == "SOXL" else {}
+
     return {}
 
 
 def save_state(state: dict) -> None:
+    payload = {}
+    if os.path.exists(STATE_FILE):
+        try:
+            with open(STATE_FILE, "r") as f:
+                payload = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            payload = {}
+
+    if not isinstance(payload, dict):
+        payload = {}
+
+    symbols = payload.get("symbols")
+    if not isinstance(symbols, dict):
+        symbols = {}
+
+    symbols[SYMBOL] = state
+    payload["symbols"] = symbols
+
     with open(STATE_FILE, "w") as f:
-        json.dump(state, f, indent=2)
+        json.dump(payload, f, indent=2)
 
 
 def get_price() -> float:
@@ -202,7 +250,7 @@ def get_position_average_cost_basis() -> float:
 def place_buy(amount_dollars: float):
     if TEST_MODE:
         log.info(f"[TEST MODE] BUY signal -> would place fractional order for ${amount_dollars:.2f} of {SYMBOL}. "
-                 f"No order sent (set SOXL_BOT_LIVE_TRADING=true to enable real trading).")
+                 f"No order sent (set TRADING_BOT_LIVE_TRADING=true to enable real trading).")
         return None
 
     log.info(f"BUY signal -> placing fractional order for ${amount_dollars:.2f} of {SYMBOL}")

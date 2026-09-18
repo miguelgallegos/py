@@ -216,3 +216,6 @@ Ending position:    1485.0343 shares, $0.00 cash
 Ran on 9/18
 First SIGNAL
 2026-09-18 08:31:00,053 [INFO] SIGNAL: BUY at -0.150% vs thresholds buy=-0.10% sell=0.10%
+
+---
+FIND values for FNGU

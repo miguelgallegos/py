@@ -1,0 +1,5 @@
+Backtest: FNGU  2026-08-16 -> 2026-09-18  interval=5m  (0 bars)
+Thresholds:         buy <= -10.00%   sell >= +20.00%
+Starting cash:      $5,000.00
+Strategy equity:    $5,000.00   (+0.00%)
+Trades simulated:   0  (0 buys, 0 sells)
