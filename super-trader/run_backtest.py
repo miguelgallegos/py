@@ -61,6 +61,10 @@ def format_rate(value: Any) -> str:
     return f"{float(value):,.2f}x"
 
 
+def format_ratio(value: Any) -> str:
+    return f"{float(value):,.2f}x"
+
+
 def render_results(result: dict[str, Any], output_format: str = "text") -> str:
     fmt = (output_format or "text").lower()
     timestamp = result.get("timestamp") or result.get("generated_at") or current_timestamp()
@@ -72,6 +76,8 @@ def render_results(result: dict[str, Any], output_format: str = "text") -> str:
     final_equity = result_with_ts.get("final_equity", 0.0)
     return_pct = result_with_ts.get("return_pct", 0.0)
     rate_factor = result_with_ts.get("rate_factor", 0.0)
+    profit_factor = result_with_ts.get("profit_factor", 0.0)
+    win_rate = result_with_ts.get("win_rate", 0.0)
     max_drawdown = result_with_ts.get("max_drawdown", 0.0)
     max_drawdown_pct = result_with_ts.get("max_drawdown_pct", 0.0)
 
@@ -81,7 +87,7 @@ def render_results(result: dict[str, Any], output_format: str = "text") -> str:
     if fmt == "csv":
         output = StringIO()
         writer = csv.writer(output)
-        writer.writerow(["timestamp", "symbol", "initial_cash", "final_equity", "return_pct", "rate_factor", "max_drawdown", "max_drawdown_pct", "start", "end", "interval", "trade_count"])
+        writer.writerow(["timestamp", "symbol", "initial_cash", "final_equity", "return_pct", "rate_factor", "profit_factor", "win_rate", "max_drawdown", "max_drawdown_pct", "start", "end", "interval", "trade_count"])
         writer.writerow([
             timestamp,
             result_with_ts.get("symbol", ""),
@@ -89,6 +95,8 @@ def render_results(result: dict[str, Any], output_format: str = "text") -> str:
             final_equity,
             return_pct,
             rate_factor,
+            profit_factor,
+            win_rate,
             max_drawdown,
             max_drawdown_pct,
             result_with_ts.get("start", ""),
@@ -115,6 +123,8 @@ def render_results(result: dict[str, Any], output_format: str = "text") -> str:
     <p>Final equity: {format_money(final_equity)}</p>
     <p>Return: {format_pct(return_pct)}</p>
     <p>Rate factor: {format_rate(rate_factor)}</p>
+    <p>Profit factor: {format_ratio(profit_factor)}</p>
+    <p>Win rate: {format_pct(win_rate)}</p>
     <p>Max drawdown: {format_money(max_drawdown)} ({format_pct(max_drawdown_pct)})</p>
     <p>Trades: {len(trades)}</p>
     <table>
@@ -134,6 +144,8 @@ def render_results(result: dict[str, Any], output_format: str = "text") -> str:
         f"Final equity: {format_money(final_equity)}",
         f"Return: {format_pct(return_pct)}",
         f"Rate factor: {format_rate(rate_factor)}",
+        f"Profit factor: {format_ratio(profit_factor)}",
+        f"Win rate: {format_pct(win_rate)}",
         f"Max drawdown: {format_money(max_drawdown)} ({format_pct(max_drawdown_pct)})",
         f"Trades: {len(trades)}",
         "",

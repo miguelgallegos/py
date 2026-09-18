@@ -62,6 +62,10 @@ class BacktestEngine:
         drawdown_amount = (peak - equity_df["equity"]).max() if not equity_df.empty else 0.0
         drawdown_pct = (drawdown_amount / peak.max()) * 100.0 if not equity_df.empty and peak.max() else 0.0
         rate_factor = (final_equity / initial_cash) if initial_cash else 0.0
+        gross_profit = sum(float(trade.pnl) for trade in trades if float(trade.pnl) > 0)
+        gross_loss = abs(sum(float(trade.pnl) for trade in trades if float(trade.pnl) < 0))
+        profit_factor = (gross_profit / gross_loss) if gross_loss else (float("inf") if gross_profit else 0.0)
+        win_rate = (sum(1 for trade in trades if float(trade.pnl) > 0) / len(trades)) * 100.0 if trades else 0.0
 
         return {
             "symbol": symbol,
@@ -72,6 +76,8 @@ class BacktestEngine:
             "final_equity": final_equity,
             "return_pct": ((final_equity / initial_cash) - 1.0) * 100.0 if initial_cash else 0.0,
             "rate_factor": rate_factor,
+            "profit_factor": profit_factor,
+            "win_rate": win_rate,
             "max_drawdown": drawdown_amount,
             "max_drawdown_pct": drawdown_pct,
             "trades": trades,
