@@ -1,20 +1,20 @@
 # SOXL Rolling-Threshold Trading Bot (Robinhood)
 
-Buys SOXL when its price drops 2% since the last check, sells the whole
-position when it rises 4% or more since the last check. Designed to be run
+Buys SOXL when its price drops 3.3% since the last check, sells the whole
+position when it rises 4.5% or more since the last check. Designed to be run
 on a schedule (e.g. every 2 minutes) via cron.
 
 ## How the logic works
 
 - Every run, the bot compares the current price to a **reference price**
   saved from the previous run (`soxl_bot_state.json`).
-- Price down ≥2.5% from the reference → **buy**, using a pyramided amount of
+- Price down ≥3.3% from the reference → **buy**, using a pyramided amount of
   available buying power. This is intentionally tuned for maximum-results
   momentum capture.
 - The pyramiding ladder is: 35% of available cash on the first qualifying
   drop, 75% on a deeper pullback, and 100% once the decline is strong enough
   to confirm a trend continuation.
-- Price up ≥3.5% from the reference → **sell** the entire current SOXL
+- Price up ≥4.5% from the reference → **sell** the entire current SOXL
   position.
 - After every run — trade or no trade — the reference price resets to the
   current price. This makes the band "rolling" (measuring the move since
@@ -57,8 +57,8 @@ simulated in test mode).
    ETF. A tight 1% band checked every 2 minutes will trade often, and
    leveraged ETFs can decay in choppy/sideways markets even when the
    underlying index is roughly flat.
-3. **Pyramiding buys increase with deeper drops** — this is the optimized
-   max-results profile: once the price has fallen 2% or more, the buy
+3. **Pyramiding buys increase with deeper drops** — this is the tuned
+   max-results profile: once the price has fallen 3.3% or more, the buy
    size scales up to 35%, then 75%, and then 100% of the available buying
    power as the decline keeps extending.
 4. **Sells liquidate the whole position** — if you've stacked several buys,
