@@ -61,6 +61,16 @@ cd /Users/miguel.gallegos/Documents/py/super-trader
 python3 run_backtest.py --symbol AAPL --start 2024-01-01 --end 2024-04-01 --strategy sma_crossover --optimize
 ```
 
+### Formatted output options
+
+```bash
+cd /Users/miguel.gallegos/Documents/py/super-trader
+python3 run_backtest.py --symbol AAPL --start 2024-01-01 --end 2024-04-01 --strategy sma_crossover --output-format text
+python3 run_backtest.py --symbol AAPL --start 2024-01-01 --end 2024-04-01 --strategy sma_crossover --output-format csv
+python3 run_backtest.py --symbol AAPL --start 2024-01-01 --end 2024-04-01 --strategy sma_crossover --output-format html
+python3 run_backtest.py --symbol AAPL --start 2024-01-01 --end 2024-04-01 --strategy sma_crossover --output-format json
+```
+
 ### Live / paper mode
 
 ```bash
