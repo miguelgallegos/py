@@ -14,9 +14,9 @@ from pathlib import Path
 from multi_strategy_bot import load_strategy_config, optimize_strategy
 
 DEFAULT_PRESETS = {
-    "SOXL": ("pyramid_buy_sell", "1d"),
-    "TQQQ": ("aggressive_tqqq_intraday", "5m"),
-    "FNGU": ("fngu_intraday_2pct_goal", "5m"),
+    "SOXL": ("soxl_best_1d", "1d"),
+    "TQQQ": ("tqqq_best_1h", "1h"),
+    "FNGU": ("fngu_best_5m", "5m"),
 }
 
 

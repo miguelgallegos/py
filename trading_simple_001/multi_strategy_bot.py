@@ -44,6 +44,9 @@ def load_strategy_config(path: str | Path, strategy_name: str) -> Dict[str, Any]
         "ladder": ladder,
         "buy_candidates": [float(x) for x in strategy.get("buy_candidates", [])],
         "sell_candidates": [float(x) for x in strategy.get("sell_candidates", [])],
+        "roc_lookback": int(strategy.get("roc_lookback", 5)),
+        "entry_drop_pct": float(strategy.get("entry_drop_pct", 0.015)),
+        "exit_interval": strategy.get("exit_interval", "1m"),
     }
 
 
@@ -69,14 +72,40 @@ def load_price_data(symbol: str, start: str, end: str, interval: str = "5m", use
     return data
 
 
-def simulate_backtest(data: pd.DataFrame, starting_cash: float, buy_threshold: float, sell_threshold: float, ladder: Iterable[float]) -> Tuple[List[List[Any]], List[Dict[str, Any]], float, float, int]:
+def compute_roc(series: pd.Series, lookback: int = 5) -> float:
+    if len(series) <= lookback:
+        return 0.0
+    return float(series.iloc[-1] / series.iloc[-lookback - 1] - 1.0)
+
+
+def load_exit_data_if_available(symbol: str, start: str, end: str) -> pd.DataFrame | None:
+    try:
+        return load_price_data(symbol, start, end, interval="1m", use_cache=True)
+    except RuntimeError:
+        return None
+
+
+def simulate_backtest(
+    data: pd.DataFrame,
+    starting_cash: float,
+    buy_threshold: float,
+    sell_threshold: float,
+    ladder: Iterable[float],
+    symbol: str | None = None,
+    interval: str = "5m",
+    entry_roc_lookback: int = 5,
+    entry_drop_pct: float = 0.015,
+    exit_interval: str | None = None,
+    exit_data: pd.DataFrame | None = None,
+) -> Tuple[List[List[Any]], List[Dict[str, Any]], float, float, int]:
     cash = float(starting_cash)
     shares = 0.0
     reference_price = None
     trades: List[Dict[str, Any]] = []
     rows: List[List[Any]] = []
+    buy_signal_used = False
 
-    for timestamp, row in data.iterrows():
+    for idx, (timestamp, row) in enumerate(data.iterrows()):
         price = float(row["Close"])
 
         if reference_price is None:
@@ -87,8 +116,26 @@ def simulate_backtest(data: pd.DataFrame, starting_cash: float, buy_threshold: f
         pct_change = (price - reference_price) / reference_price
         action = "HOLD"
 
-        if pct_change <= buy_threshold and cash > 1.0:
-            buy_fraction = calculate_buy_fraction(pct_change, buy_threshold, tuple(float(x) for x in ladder))
+        buy_allowed = False
+        if str(interval).lower() in {"1d", "1day"}:
+            recent_window = data.iloc[max(0, idx - entry_roc_lookback):idx + 1]["Close"]
+            if not recent_window.empty:
+                recent_high = float(recent_window.max())
+                price_drop = (recent_high - price) / recent_high if recent_high > 0 else 0.0
+                roc_pct = compute_roc(recent_window, lookback=entry_roc_lookback)
+                buy_allowed = (
+                    price_drop >= max(abs(float(buy_threshold)), float(entry_drop_pct))
+                    and roc_pct <= 0.0
+                    and price <= recent_high * (1.0 + float(buy_threshold))
+                )
+        else:
+            buy_allowed = pct_change <= buy_threshold
+
+        if buy_allowed and cash > 1.0:
+            if str(interval).lower() in {"1d", "1d", "1day"}:
+                buy_fraction = 1.0 if cash > 1.0 else 0.0
+            else:
+                buy_fraction = calculate_buy_fraction(pct_change, buy_threshold, tuple(float(x) for x in ladder))
             if buy_fraction > 0:
                 buy_amount = cash * buy_fraction
                 qty = buy_amount / price
@@ -104,21 +151,43 @@ def simulate_backtest(data: pd.DataFrame, starting_cash: float, buy_threshold: f
                     "equity": equity,
                     "return_pct": ((equity / starting_cash) - 1.0) * 100.0,
                 })
+                buy_signal_used = True
 
-        elif pct_change >= sell_threshold and shares > 0:
-            action = f"SELL {shares:.4f} sh"
-            sell_qty = shares
-            cash += shares * price
-            shares = 0.0
-            equity = cash + shares * price
-            trades.append({
-                "timestamp": timestamp.isoformat(),
-                "side": "SELL",
-                "price": price,
-                "qty": sell_qty,
-                "equity": equity,
-                "return_pct": ((equity / starting_cash) - 1.0) * 100.0,
-            })
+        elif shares > 0:
+            if str(interval).lower() in {"1d", "1day"} and exit_data is not None:
+                day_slice = exit_data[exit_data.index.date == timestamp.date()]
+                if not day_slice.empty:
+                    avg_cost = (starting_cash - cash) / (shares if shares > 0 else 1.0)
+                    for intraday_price in [float(v) for v in day_slice["Close"].tolist()]:
+                        if intraday_price >= avg_cost * (1.0 + float(sell_threshold)):
+                            action = f"SELL {shares:.4f} sh (1m exit)"
+                            sell_qty = shares
+                            cash += shares * intraday_price
+                            shares = 0.0
+                            equity = cash + shares * intraday_price
+                            trades.append({
+                                "timestamp": timestamp.isoformat(),
+                                "side": "SELL",
+                                "price": intraday_price,
+                                "qty": sell_qty,
+                                "equity": equity,
+                                "return_pct": ((equity / starting_cash) - 1.0) * 100.0,
+                            })
+                            break
+            if shares > 0 and (pct_change >= sell_threshold or str(interval).lower() not in {"1d", "1day"} and pct_change >= sell_threshold):
+                action = f"SELL {shares:.4f} sh"
+                sell_qty = shares
+                cash += shares * price
+                shares = 0.0
+                equity = cash + shares * price
+                trades.append({
+                    "timestamp": timestamp.isoformat(),
+                    "side": "SELL",
+                    "price": price,
+                    "qty": sell_qty,
+                    "equity": equity,
+                    "return_pct": ((equity / starting_cash) - 1.0) * 100.0,
+                })
 
         reference_price = price
         equity = cash + shares * price
@@ -155,12 +224,21 @@ def trade_log_to_dataframe(trade_log: Iterable[Dict[str, Any]]) -> pd.DataFrame:
 
 def run_once(symbol: str, interval: str, start: str, end: str, cash: float, strategy: Dict[str, Any]) -> Dict[str, Any]:
     data = load_price_data(symbol, start, end, interval=interval, use_cache=True)
+    exit_data = None
+    if str(interval).lower() in {"1d", "1day"}:
+        exit_data = load_exit_data_if_available(symbol, start, end)
     rows, trades, final_equity, return_pct, trade_count = simulate_backtest(
         data,
         cash,
         strategy["buy_threshold"],
         strategy["sell_threshold"],
         strategy["ladder"],
+        symbol=symbol,
+        interval=interval,
+        entry_roc_lookback=strategy.get("roc_lookback", 5),
+        entry_drop_pct=strategy.get("entry_drop_pct", 0.015),
+        exit_interval=strategy.get("exit_interval", "1m"),
+        exit_data=exit_data,
     )
     return {
         "symbol": symbol,
@@ -194,15 +272,22 @@ def optimize_strategy(symbol: str, interval: str, start: str, end: str, cash: fl
 
     for buy_threshold in buy_candidates:
         for sell_threshold in sell_candidates:
-            if sell_threshold <= abs(float(buy_threshold)):
-                continue
             data = load_price_data(symbol, start, end, interval=interval, use_cache=True)
+            exit_data = None
+            if str(interval).lower() in {"1d", "1day"}:
+                exit_data = load_exit_data_if_available(symbol, start, end)
             _, trade_log, final_equity, return_pct, trade_count = simulate_backtest(
                 data,
                 cash,
                 float(buy_threshold),
                 float(sell_threshold),
                 strategy["ladder"],
+                symbol=symbol,
+                interval=interval,
+                entry_roc_lookback=strategy.get("roc_lookback", 5),
+                entry_drop_pct=strategy.get("entry_drop_pct", 0.015),
+                exit_interval=strategy.get("exit_interval", "1m"),
+                exit_data=exit_data,
             )
             results.append({
                 "symbol": symbol,
