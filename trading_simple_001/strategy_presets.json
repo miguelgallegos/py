@@ -1,0 +1,36 @@
+{
+  "strategies": {
+    "pyramid_buy_sell": {
+      "name": "pyramid_buy_sell",
+      "buy_threshold": -0.02,
+      "sell_threshold": 0.03,
+      "ladder": [0.35, 0.75, 1.0],
+      "buy_candidates": [-0.03, -0.025, -0.02, -0.0175, -0.015, -0.0125, -0.01],
+      "sell_candidates": [0.025, 0.03, 0.035, 0.04, 0.045, 0.05, 0.055]
+    },
+    "tqqq_intraday_2pct_goal": {
+      "name": "tqqq_intraday_2pct_goal",
+      "buy_threshold": -0.015,
+      "sell_threshold": 0.025,
+      "ladder": [0.35, 0.75, 1.0],
+      "buy_candidates": [-0.03, -0.025, -0.02, -0.0175, -0.015, -0.0125, -0.01],
+      "sell_candidates": [0.025, 0.03, 0.035, 0.04, 0.045, 0.05, 0.055]
+    },
+    "aggressive_tqqq_intraday": {
+      "name": "aggressive_tqqq_intraday",
+      "buy_threshold": -0.015,
+      "sell_threshold": 0.02,
+      "ladder": [0.45, 0.85, 1.0],
+      "buy_candidates": [-0.035, -0.03, -0.025, -0.02, -0.0175, -0.015, -0.0125, -0.01],
+      "sell_candidates": [0.02, 0.025, 0.03, 0.035, 0.04, 0.045, 0.05, 0.055, 0.06]
+    },
+    "fngu_intraday_2pct_goal": {
+      "name": "fngu_intraday_2pct_goal",
+      "buy_threshold": -0.0125,
+      "sell_threshold": 0.025,
+      "ladder": [0.35, 0.75, 1.0],
+      "buy_candidates": [-0.03, -0.025, -0.02, -0.0175, -0.015, -0.0125, -0.01],
+      "sell_candidates": [0.025, 0.03, 0.035, 0.04, 0.045, 0.05, 0.055]
+    }
+  }
+}
