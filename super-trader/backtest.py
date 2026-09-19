@@ -41,7 +41,10 @@ class BacktestEngine:
             signal = int(row.get("signal", 0))
 
             if position == 0 and signal == 1:
-                qty = cash / close
+                qty = cash / close if cash > 0 else 0.0
+                if qty <= 0:
+                    continue
+                cash -= qty * close
                 position = 1
                 entry_price = close
             elif position == 1 and signal == -1:
@@ -49,14 +52,25 @@ class BacktestEngine:
                 trade = Trade(idx, "LONG", entry_price, close, qty, pnl, "signal_flip")
                 trade.exit_timestamp = idx
                 trades.append(trade)
-                cash += pnl + qty * close
+                cash += qty * close
                 position = 0
                 qty = 0.0
                 entry_price = 0.0
 
             equity_curve.append({"timestamp": idx, "equity": cash + (position * qty * close)})
 
-        final_equity = cash + (position * qty * signal_df["Close"].iloc[-1])
+        if position == 1 and qty > 0:
+            final_close = float(signal_df["Close"].iloc[-1])
+            pnl = (final_close - entry_price) * qty
+            trade = Trade(signal_df.index[-1], "LONG", entry_price, final_close, qty, pnl, "end_of_data")
+            trade.exit_timestamp = signal_df.index[-1]
+            trades.append(trade)
+            cash += qty * final_close
+            position = 0
+            qty = 0.0
+            entry_price = 0.0
+
+        final_equity = cash
         equity_df = pd.DataFrame(equity_curve)
         peak = equity_df["equity"].cummax()
         drawdown_amount = (peak - equity_df["equity"]).max() if not equity_df.empty else 0.0

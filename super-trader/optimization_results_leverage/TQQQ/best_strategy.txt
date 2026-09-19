@@ -1,0 +1,20 @@
+Best strategy candidate
+Timestamp: 2026-09-18T23:21:46Z
+Symbol: TQQQ
+Range: 2024-01-01 to 2026-09-18
+Interval: 1d
+
+Recommended parameters:
+- fast_window: 12
+- sl_levels: (0.01, 0.02)
+- slow_window: 30
+- tp_levels: (0.02, 0.04, 0.06)
+
+Performance:
+- Final equity: $23,738.62
+- Return: 137.39%
+- Rate factor: 2.37x
+- Profit factor: 3.54x
+- Win rate: 54.55%
+- Max drawdown: $7,252.79
+- Trades: 11

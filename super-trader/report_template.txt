@@ -1,0 +1,38 @@
+========================================
+BEST WINNER REPORT
+========================================
+
+Symbol: {symbol}
+
+Quick-scan winner:
+  - Fast window: {quick_fast_window}
+  - Slow window: {quick_slow_window}
+  - TP levels: {quick_tp_levels}
+  - SL levels: {quick_sl_levels}
+
+Deep-scan winner:
+  - Fast window: {deep_fast_window}
+  - Slow window: {deep_slow_window}
+  - TP levels: {deep_tp_levels}
+  - SL levels: {deep_sl_levels}
+
+Performance:
+  - Return: {return_pct}%
+  - Final equity: ${final_equity:,.2f}
+
+Recommended live-trading starting config:
+  strategy: {strategy}
+  symbol: {symbol}
+  fast_window: {deep_fast_window}
+  slow_window: {deep_slow_window}
+  tp_levels: {deep_tp_levels}
+  sl_levels: {deep_sl_levels}
+
+Notes:
+  - {symbol} came out best in the multi-symbol quick scan.
+  - The deep-scan profile improved the return materially and is the stronger candidate for a live starting configuration.
+  - This is a best-of-breed starting point; continue monitoring and re-optimization as the market regime changes.
+
+========================================
+END REPORT
+========================================

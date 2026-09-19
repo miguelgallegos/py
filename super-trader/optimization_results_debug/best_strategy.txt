@@ -1,0 +1,20 @@
+Best strategy candidate
+Timestamp: 2026-09-18T23:09:57Z
+Symbol: SOXL
+Range: 2024-01-01 to 2024-01-31
+Interval: 1d
+
+Recommended parameters:
+- fast_window: 5
+- sl_levels: (0.01, 0.02)
+- slow_window: 20
+- tp_levels: (0.02, 0.04)
+
+Performance:
+- Final equity: $10,000.00
+- Return: 0.00%
+- Rate factor: 1.00x
+- Profit factor: 0.00x
+- Win rate: 0.00%
+- Max drawdown: $0.00
+- Trades: 1

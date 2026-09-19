@@ -74,7 +74,14 @@ def select_best_result(results: Iterable[dict[str, Any]]) -> dict[str, Any]:
     rows = list(results)
     if not rows:
         raise ValueError("No optimization results were produced.")
-    return max(rows, key=lambda item: (float(item.get("return_pct", 0.0)), float(item.get("final_equity", 0.0))))
+
+    def sort_key(item: dict[str, Any]) -> tuple[float, float]:
+        trade_count = len(item.get("trades", [])) if isinstance(item.get("trades", []), list) else 0
+        if trade_count == 0:
+            return (-1_000_000.0, float(item.get("final_equity", 0.0)))
+        return (float(item.get("return_pct", 0.0)), float(item.get("final_equity", 0.0)))
+
+    return max(rows, key=sort_key)
 
 
 def ensure_output_dir(path: str | Path) -> Path:
@@ -149,7 +156,13 @@ def run_optimizer(symbol: str, start: str, end: str, interval: str = "1d", strat
         result["params"] = config
         results.append(result)
 
-    ranked = sorted(results, key=lambda item: float(item.get("return_pct", 0.0)), reverse=True)
+    def score_result(item: dict[str, Any]) -> tuple[float, float, float]:
+        trade_count = len(item.get("trades", [])) if isinstance(item.get("trades", []), list) else 0
+        if trade_count == 0:
+            return (-1_000_000.0, float(item.get("final_equity", 0.0)), 0.0)
+        return (float(item.get("return_pct", 0.0)), float(item.get("final_equity", 0.0)), float(item.get("win_rate", 0.0)))
+
+    ranked = sorted(results, key=score_result, reverse=True)
     if max_results:
         ranked = ranked[:max_results]
 

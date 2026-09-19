@@ -1,0 +1,20 @@
+Best strategy candidate
+Timestamp: 2026-09-18T23:26:52Z
+Symbol: FNGU
+Range: 2024-01-01 to 2026-09-18
+Interval: 1d
+
+Recommended parameters:
+- fast_window: 8
+- sl_levels: (0.01, 0.02)
+- slow_window: 40
+- tp_levels: (0.02, 0.04, 0.06)
+
+Performance:
+- Final equity: $25,026.44
+- Return: 150.26%
+- Rate factor: 2.50x
+- Profit factor: 130.25x
+- Win rate: 75.00%
+- Max drawdown: $9,112.44
+- Trades: 4

@@ -1,0 +1,918 @@
+[
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 23738.62444515663,
+    "return_pct": 137.38624445156628,
+    "rate_factor": 2.373862444515663,
+    "profit_factor": 3.535912572182144,
+    "win_rate": 54.54545454545454,
+    "max_drawdown": 7252.790442951933,
+    "max_drawdown_pct": 27.04804176370552,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-04-10 00:00:00'), side='LONG', entry=28.3700008392334, exit=29.46500015258789, qty=352.4850089595632, pnl=385.9708427784737, reason='signal_flip', exit_timestamp=Timestamp('2024-04-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-25 00:00:00'), side='LONG', entry=29.780000686645508, exit=31.63500022888184, qty=348.75656827758036, pnl=646.9432745068256, reason='signal_flip', exit_timestamp=Timestamp('2024-07-25 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-13 00:00:00'), side='LONG', entry=34.22999954223633, exit=33.67499923706055, qty=322.31709800848256, pnl=-178.88608775808, reason='signal_flip', exit_timestamp=Timestamp('2024-09-13 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-01-06 00:00:00'), side='LONG', entry=35.82500076293945, exit=42.60499954223633, qty=302.9735603175642, pnl=2054.160369112313, reason='signal_flip', exit_timestamp=Timestamp('2025-01-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-28 00:00:00'), side='LONG', entry=41.36000061035156, exit=37.459999084472656, qty=312.09352534218476, pnl=-1217.1652250514476, reason='signal_flip', exit_timestamp=Timestamp('2025-02-28 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-09-03 00:00:00'), side='LONG', entry=28.3700008392334, exit=44.55500030517578, qty=412.09104080886567, pnl=6669.693275411131, reason='signal_flip', exit_timestamp=Timestamp('2025-09-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-18 00:00:00'), side='LONG', entry=46.56499862670898, exit=49.18000030517578, qty=394.3029526574019, pnl=1031.1028830235227, reason='signal_flip', exit_timestamp=Timestamp('2025-11-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-02 00:00:00'), side='LONG', entry=56.650001525878906, exit=52.34999847412109, qty=342.3092464201285, pnl=-1471.930804251472, reason='signal_flip', exit_timestamp=Timestamp('2026-01-02 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-03 00:00:00'), side='LONG', entry=55.0099983215332, exit=52.52000045776367, qty=325.75693645779796, pnl=-811.1340758880239, reason='signal_flip', exit_timestamp=Timestamp('2026-02-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-18 00:00:00'), side='LONG', entry=55.650001525878906, exit=82.87000274658203, qty=307.4349323050272, pnl=8368.379232629622, reason='signal_flip', exit_timestamp=Timestamp('2026-06-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-09 00:00:00'), side='LONG', entry=76.79000091552734, exit=71.55000305175781, qty=331.77670765415047, pnl=-1738.5092393562368, reason='signal_flip', exit_timestamp=Timestamp('2026-09-09 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  23738.624445\n676 2026-09-14  23738.624445\n677 2026-09-15  23738.624445\n678 2026-09-16  23738.624445\n679 2026-09-17  23738.624445\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 12,
+      "slow_window": 30,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 23738.62444515663,
+    "return_pct": 137.38624445156628,
+    "rate_factor": 2.373862444515663,
+    "profit_factor": 3.535912572182144,
+    "win_rate": 54.54545454545454,
+    "max_drawdown": 7252.790442951933,
+    "max_drawdown_pct": 27.04804176370552,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-04-10 00:00:00'), side='LONG', entry=28.3700008392334, exit=29.46500015258789, qty=352.4850089595632, pnl=385.9708427784737, reason='signal_flip', exit_timestamp=Timestamp('2024-04-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-25 00:00:00'), side='LONG', entry=29.780000686645508, exit=31.63500022888184, qty=348.75656827758036, pnl=646.9432745068256, reason='signal_flip', exit_timestamp=Timestamp('2024-07-25 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-13 00:00:00'), side='LONG', entry=34.22999954223633, exit=33.67499923706055, qty=322.31709800848256, pnl=-178.88608775808, reason='signal_flip', exit_timestamp=Timestamp('2024-09-13 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-01-06 00:00:00'), side='LONG', entry=35.82500076293945, exit=42.60499954223633, qty=302.9735603175642, pnl=2054.160369112313, reason='signal_flip', exit_timestamp=Timestamp('2025-01-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-28 00:00:00'), side='LONG', entry=41.36000061035156, exit=37.459999084472656, qty=312.09352534218476, pnl=-1217.1652250514476, reason='signal_flip', exit_timestamp=Timestamp('2025-02-28 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-09-03 00:00:00'), side='LONG', entry=28.3700008392334, exit=44.55500030517578, qty=412.09104080886567, pnl=6669.693275411131, reason='signal_flip', exit_timestamp=Timestamp('2025-09-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-18 00:00:00'), side='LONG', entry=46.56499862670898, exit=49.18000030517578, qty=394.3029526574019, pnl=1031.1028830235227, reason='signal_flip', exit_timestamp=Timestamp('2025-11-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-02 00:00:00'), side='LONG', entry=56.650001525878906, exit=52.34999847412109, qty=342.3092464201285, pnl=-1471.930804251472, reason='signal_flip', exit_timestamp=Timestamp('2026-01-02 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-03 00:00:00'), side='LONG', entry=55.0099983215332, exit=52.52000045776367, qty=325.75693645779796, pnl=-811.1340758880239, reason='signal_flip', exit_timestamp=Timestamp('2026-02-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-18 00:00:00'), side='LONG', entry=55.650001525878906, exit=82.87000274658203, qty=307.4349323050272, pnl=8368.379232629622, reason='signal_flip', exit_timestamp=Timestamp('2026-06-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-09 00:00:00'), side='LONG', entry=76.79000091552734, exit=71.55000305175781, qty=331.77670765415047, pnl=-1738.5092393562368, reason='signal_flip', exit_timestamp=Timestamp('2026-09-09 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  23738.624445\n676 2026-09-14  23738.624445\n677 2026-09-15  23738.624445\n678 2026-09-16  23738.624445\n679 2026-09-17  23738.624445\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 12,
+      "slow_window": 30,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 23738.62444515663,
+    "return_pct": 137.38624445156628,
+    "rate_factor": 2.373862444515663,
+    "profit_factor": 3.535912572182144,
+    "win_rate": 54.54545454545454,
+    "max_drawdown": 7252.790442951933,
+    "max_drawdown_pct": 27.04804176370552,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-04-10 00:00:00'), side='LONG', entry=28.3700008392334, exit=29.46500015258789, qty=352.4850089595632, pnl=385.9708427784737, reason='signal_flip', exit_timestamp=Timestamp('2024-04-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-25 00:00:00'), side='LONG', entry=29.780000686645508, exit=31.63500022888184, qty=348.75656827758036, pnl=646.9432745068256, reason='signal_flip', exit_timestamp=Timestamp('2024-07-25 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-13 00:00:00'), side='LONG', entry=34.22999954223633, exit=33.67499923706055, qty=322.31709800848256, pnl=-178.88608775808, reason='signal_flip', exit_timestamp=Timestamp('2024-09-13 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-01-06 00:00:00'), side='LONG', entry=35.82500076293945, exit=42.60499954223633, qty=302.9735603175642, pnl=2054.160369112313, reason='signal_flip', exit_timestamp=Timestamp('2025-01-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-28 00:00:00'), side='LONG', entry=41.36000061035156, exit=37.459999084472656, qty=312.09352534218476, pnl=-1217.1652250514476, reason='signal_flip', exit_timestamp=Timestamp('2025-02-28 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-09-03 00:00:00'), side='LONG', entry=28.3700008392334, exit=44.55500030517578, qty=412.09104080886567, pnl=6669.693275411131, reason='signal_flip', exit_timestamp=Timestamp('2025-09-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-18 00:00:00'), side='LONG', entry=46.56499862670898, exit=49.18000030517578, qty=394.3029526574019, pnl=1031.1028830235227, reason='signal_flip', exit_timestamp=Timestamp('2025-11-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-02 00:00:00'), side='LONG', entry=56.650001525878906, exit=52.34999847412109, qty=342.3092464201285, pnl=-1471.930804251472, reason='signal_flip', exit_timestamp=Timestamp('2026-01-02 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-03 00:00:00'), side='LONG', entry=55.0099983215332, exit=52.52000045776367, qty=325.75693645779796, pnl=-811.1340758880239, reason='signal_flip', exit_timestamp=Timestamp('2026-02-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-18 00:00:00'), side='LONG', entry=55.650001525878906, exit=82.87000274658203, qty=307.4349323050272, pnl=8368.379232629622, reason='signal_flip', exit_timestamp=Timestamp('2026-06-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-09 00:00:00'), side='LONG', entry=76.79000091552734, exit=71.55000305175781, qty=331.77670765415047, pnl=-1738.5092393562368, reason='signal_flip', exit_timestamp=Timestamp('2026-09-09 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  23738.624445\n676 2026-09-14  23738.624445\n677 2026-09-15  23738.624445\n678 2026-09-16  23738.624445\n679 2026-09-17  23738.624445\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 12,
+      "slow_window": 30,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 23738.62444515663,
+    "return_pct": 137.38624445156628,
+    "rate_factor": 2.373862444515663,
+    "profit_factor": 3.535912572182144,
+    "win_rate": 54.54545454545454,
+    "max_drawdown": 7252.790442951933,
+    "max_drawdown_pct": 27.04804176370552,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-04-10 00:00:00'), side='LONG', entry=28.3700008392334, exit=29.46500015258789, qty=352.4850089595632, pnl=385.9708427784737, reason='signal_flip', exit_timestamp=Timestamp('2024-04-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-25 00:00:00'), side='LONG', entry=29.780000686645508, exit=31.63500022888184, qty=348.75656827758036, pnl=646.9432745068256, reason='signal_flip', exit_timestamp=Timestamp('2024-07-25 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-13 00:00:00'), side='LONG', entry=34.22999954223633, exit=33.67499923706055, qty=322.31709800848256, pnl=-178.88608775808, reason='signal_flip', exit_timestamp=Timestamp('2024-09-13 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-01-06 00:00:00'), side='LONG', entry=35.82500076293945, exit=42.60499954223633, qty=302.9735603175642, pnl=2054.160369112313, reason='signal_flip', exit_timestamp=Timestamp('2025-01-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-28 00:00:00'), side='LONG', entry=41.36000061035156, exit=37.459999084472656, qty=312.09352534218476, pnl=-1217.1652250514476, reason='signal_flip', exit_timestamp=Timestamp('2025-02-28 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-09-03 00:00:00'), side='LONG', entry=28.3700008392334, exit=44.55500030517578, qty=412.09104080886567, pnl=6669.693275411131, reason='signal_flip', exit_timestamp=Timestamp('2025-09-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-18 00:00:00'), side='LONG', entry=46.56499862670898, exit=49.18000030517578, qty=394.3029526574019, pnl=1031.1028830235227, reason='signal_flip', exit_timestamp=Timestamp('2025-11-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-02 00:00:00'), side='LONG', entry=56.650001525878906, exit=52.34999847412109, qty=342.3092464201285, pnl=-1471.930804251472, reason='signal_flip', exit_timestamp=Timestamp('2026-01-02 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-03 00:00:00'), side='LONG', entry=55.0099983215332, exit=52.52000045776367, qty=325.75693645779796, pnl=-811.1340758880239, reason='signal_flip', exit_timestamp=Timestamp('2026-02-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-18 00:00:00'), side='LONG', entry=55.650001525878906, exit=82.87000274658203, qty=307.4349323050272, pnl=8368.379232629622, reason='signal_flip', exit_timestamp=Timestamp('2026-06-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-09 00:00:00'), side='LONG', entry=76.79000091552734, exit=71.55000305175781, qty=331.77670765415047, pnl=-1738.5092393562368, reason='signal_flip', exit_timestamp=Timestamp('2026-09-09 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  23738.624445\n676 2026-09-14  23738.624445\n677 2026-09-15  23738.624445\n678 2026-09-16  23738.624445\n679 2026-09-17  23738.624445\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 12,
+      "slow_window": 30,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 21837.606110795663,
+    "return_pct": 118.37606110795664,
+    "rate_factor": 2.1837606110795664,
+    "profit_factor": 2.3982930151802346,
+    "win_rate": 40.0,
+    "max_drawdown": 6642.037921476995,
+    "max_drawdown_pct": 28.897773067287357,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-03-20 00:00:00'), side='LONG', entry=27.96500015258789, exit=30.850000381469727, qty=357.58984249726876, pnl=1031.6467774504401, reason='signal_flip', exit_timestamp=Timestamp('2024-03-20 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-03-26 00:00:00'), side='LONG', entry=30.9950008392334, exit=30.70499992370605, qty=355.9169697936129, pnl=-103.21624709186696, reason='signal_flip', exit_timestamp=Timestamp('2024-03-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-04-09 00:00:00'), side='LONG', entry=30.780000686645508, exit=30.26000022888184, qty=355.04971691245225, pnl=-184.62601532333602, reason='signal_flip', exit_timestamp=Timestamp('2024-04-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-23 00:00:00'), side='LONG', entry=29.225000381469727, exit=36.68000030517578, qty=367.6237596166947, pnl=2740.635099894992, reason='signal_flip', exit_timestamp=Timestamp('2024-07-23 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-06 00:00:00'), side='LONG', entry=35.43000030517578, exit=28.4950008392334, qty=380.5938328755916, pnl=-2639.418027733192, reason='signal_flip', exit_timestamp=Timestamp('2024-09-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-04 00:00:00'), side='LONG', entry=35.064998626708984, exit=35.1349983215332, qty=309.2833883340407, pnl=21.649742797583187, reason='signal_flip', exit_timestamp=Timestamp('2024-11-04 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-29 00:00:00'), side='LONG', entry=41.275001525878906, exit=39.94499969482422, qty=263.27488620881957, pnl=-350.1560807284445, reason='signal_flip', exit_timestamp=Timestamp('2024-11-29 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-12-30 00:00:00'), side='LONG', entry=43.125, exit=40.630001068115234, qty=243.86122317138964, pnl=-608.4334913407296, reason='signal_flip', exit_timestamp=Timestamp('2024-12-30 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-28 00:00:00'), side='LONG', entry=39.56999969482422, exit=37.459999084472656, qty=250.3937789825516, pnl=-528.3310264814181, reason='signal_flip', exit_timestamp=Timestamp('2025-02-28 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-29 00:00:00'), side='LONG', entry=27.434999465942383, exit=44.68000030517578, qty=341.88995494926064, pnl=5895.892560025469, reason='signal_flip', exit_timestamp=Timestamp('2025-08-29 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-10-22 00:00:00'), side='LONG', entry=46.994998931884766, exit=52.29999923706055, qty=325.04827404316444, pnl=1724.3811929958483, reason='signal_flip', exit_timestamp=Timestamp('2025-10-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-13 00:00:00'), side='LONG', entry=55.27999877929688, exit=52.33000183105469, qty=307.5257753231371, pnl=-907.2000987090693, reason='signal_flip', exit_timestamp=Timestamp('2025-11-13 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-22 00:00:00'), side='LONG', entry=56.150001525878906, exit=54.25, qty=286.6041664903477, pnl=-544.5483536549127, reason='signal_flip', exit_timestamp=Timestamp('2025-12-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-22 00:00:00'), side='LONG', entry=53.59999847412109, exit=53.900001525878906, qty=290.0797849762685, pnl=87.02482074613266, reason='signal_flip', exit_timestamp=Timestamp('2026-01-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-30 00:00:00'), side='LONG', entry=56.040000915527344, exit=54.0, qty=279.00250887603625, pnl=-569.1653735415398, reason='signal_flip', exit_timestamp=Timestamp('2026-01-30 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=52.52000045776367, exit=47.63999938964844, qty=286.8647248284408, pnl=-1399.9001635673737, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-06 00:00:00'), side='LONG', entry=49.79999923706055, exit=47.540000915527344, qty=274.4224001025354, pnl=-620.1941636228431, reason='signal_flip', exit_timestamp=Timestamp('2026-03-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-11 00:00:00'), side='LONG', entry=49.38999938964844, exit=49.34999847412109, qty=264.1433754471769, pnl=-10.565976848371845, reason='signal_flip', exit_timestamp=Timestamp('2026-03-11 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-15 00:00:00'), side='LONG', entry=50.65999984741211, exit=84.58999633789062, qty=257.31297304639196, pnl=8730.628272418671, reason='signal_flip', exit_timestamp=Timestamp('2026-06-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-08-27 00:00:00'), side='LONG', entry=73.05999755859375, exit=73.30000305175781, qty=297.9209440874911, pnl=71.50266310962138, reason='signal_flip', exit_timestamp=Timestamp('2026-08-27 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  21837.606111\n676 2026-09-14  21837.606111\n677 2026-09-15  21837.606111\n678 2026-09-16  21837.606111\n679 2026-09-17  21837.606111\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 10,
+      "slow_window": 20,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 21837.606110795663,
+    "return_pct": 118.37606110795664,
+    "rate_factor": 2.1837606110795664,
+    "profit_factor": 2.3982930151802346,
+    "win_rate": 40.0,
+    "max_drawdown": 6642.037921476995,
+    "max_drawdown_pct": 28.897773067287357,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-03-20 00:00:00'), side='LONG', entry=27.96500015258789, exit=30.850000381469727, qty=357.58984249726876, pnl=1031.6467774504401, reason='signal_flip', exit_timestamp=Timestamp('2024-03-20 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-03-26 00:00:00'), side='LONG', entry=30.9950008392334, exit=30.70499992370605, qty=355.9169697936129, pnl=-103.21624709186696, reason='signal_flip', exit_timestamp=Timestamp('2024-03-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-04-09 00:00:00'), side='LONG', entry=30.780000686645508, exit=30.26000022888184, qty=355.04971691245225, pnl=-184.62601532333602, reason='signal_flip', exit_timestamp=Timestamp('2024-04-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-23 00:00:00'), side='LONG', entry=29.225000381469727, exit=36.68000030517578, qty=367.6237596166947, pnl=2740.635099894992, reason='signal_flip', exit_timestamp=Timestamp('2024-07-23 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-06 00:00:00'), side='LONG', entry=35.43000030517578, exit=28.4950008392334, qty=380.5938328755916, pnl=-2639.418027733192, reason='signal_flip', exit_timestamp=Timestamp('2024-09-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-04 00:00:00'), side='LONG', entry=35.064998626708984, exit=35.1349983215332, qty=309.2833883340407, pnl=21.649742797583187, reason='signal_flip', exit_timestamp=Timestamp('2024-11-04 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-29 00:00:00'), side='LONG', entry=41.275001525878906, exit=39.94499969482422, qty=263.27488620881957, pnl=-350.1560807284445, reason='signal_flip', exit_timestamp=Timestamp('2024-11-29 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-12-30 00:00:00'), side='LONG', entry=43.125, exit=40.630001068115234, qty=243.86122317138964, pnl=-608.4334913407296, reason='signal_flip', exit_timestamp=Timestamp('2024-12-30 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-28 00:00:00'), side='LONG', entry=39.56999969482422, exit=37.459999084472656, qty=250.3937789825516, pnl=-528.3310264814181, reason='signal_flip', exit_timestamp=Timestamp('2025-02-28 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-29 00:00:00'), side='LONG', entry=27.434999465942383, exit=44.68000030517578, qty=341.88995494926064, pnl=5895.892560025469, reason='signal_flip', exit_timestamp=Timestamp('2025-08-29 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-10-22 00:00:00'), side='LONG', entry=46.994998931884766, exit=52.29999923706055, qty=325.04827404316444, pnl=1724.3811929958483, reason='signal_flip', exit_timestamp=Timestamp('2025-10-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-13 00:00:00'), side='LONG', entry=55.27999877929688, exit=52.33000183105469, qty=307.5257753231371, pnl=-907.2000987090693, reason='signal_flip', exit_timestamp=Timestamp('2025-11-13 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-22 00:00:00'), side='LONG', entry=56.150001525878906, exit=54.25, qty=286.6041664903477, pnl=-544.5483536549127, reason='signal_flip', exit_timestamp=Timestamp('2025-12-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-22 00:00:00'), side='LONG', entry=53.59999847412109, exit=53.900001525878906, qty=290.0797849762685, pnl=87.02482074613266, reason='signal_flip', exit_timestamp=Timestamp('2026-01-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-30 00:00:00'), side='LONG', entry=56.040000915527344, exit=54.0, qty=279.00250887603625, pnl=-569.1653735415398, reason='signal_flip', exit_timestamp=Timestamp('2026-01-30 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=52.52000045776367, exit=47.63999938964844, qty=286.8647248284408, pnl=-1399.9001635673737, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-06 00:00:00'), side='LONG', entry=49.79999923706055, exit=47.540000915527344, qty=274.4224001025354, pnl=-620.1941636228431, reason='signal_flip', exit_timestamp=Timestamp('2026-03-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-11 00:00:00'), side='LONG', entry=49.38999938964844, exit=49.34999847412109, qty=264.1433754471769, pnl=-10.565976848371845, reason='signal_flip', exit_timestamp=Timestamp('2026-03-11 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-15 00:00:00'), side='LONG', entry=50.65999984741211, exit=84.58999633789062, qty=257.31297304639196, pnl=8730.628272418671, reason='signal_flip', exit_timestamp=Timestamp('2026-06-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-08-27 00:00:00'), side='LONG', entry=73.05999755859375, exit=73.30000305175781, qty=297.9209440874911, pnl=71.50266310962138, reason='signal_flip', exit_timestamp=Timestamp('2026-08-27 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  21837.606111\n676 2026-09-14  21837.606111\n677 2026-09-15  21837.606111\n678 2026-09-16  21837.606111\n679 2026-09-17  21837.606111\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 10,
+      "slow_window": 20,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 21837.606110795663,
+    "return_pct": 118.37606110795664,
+    "rate_factor": 2.1837606110795664,
+    "profit_factor": 2.3982930151802346,
+    "win_rate": 40.0,
+    "max_drawdown": 6642.037921476995,
+    "max_drawdown_pct": 28.897773067287357,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-03-20 00:00:00'), side='LONG', entry=27.96500015258789, exit=30.850000381469727, qty=357.58984249726876, pnl=1031.6467774504401, reason='signal_flip', exit_timestamp=Timestamp('2024-03-20 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-03-26 00:00:00'), side='LONG', entry=30.9950008392334, exit=30.70499992370605, qty=355.9169697936129, pnl=-103.21624709186696, reason='signal_flip', exit_timestamp=Timestamp('2024-03-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-04-09 00:00:00'), side='LONG', entry=30.780000686645508, exit=30.26000022888184, qty=355.04971691245225, pnl=-184.62601532333602, reason='signal_flip', exit_timestamp=Timestamp('2024-04-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-23 00:00:00'), side='LONG', entry=29.225000381469727, exit=36.68000030517578, qty=367.6237596166947, pnl=2740.635099894992, reason='signal_flip', exit_timestamp=Timestamp('2024-07-23 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-06 00:00:00'), side='LONG', entry=35.43000030517578, exit=28.4950008392334, qty=380.5938328755916, pnl=-2639.418027733192, reason='signal_flip', exit_timestamp=Timestamp('2024-09-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-04 00:00:00'), side='LONG', entry=35.064998626708984, exit=35.1349983215332, qty=309.2833883340407, pnl=21.649742797583187, reason='signal_flip', exit_timestamp=Timestamp('2024-11-04 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-29 00:00:00'), side='LONG', entry=41.275001525878906, exit=39.94499969482422, qty=263.27488620881957, pnl=-350.1560807284445, reason='signal_flip', exit_timestamp=Timestamp('2024-11-29 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-12-30 00:00:00'), side='LONG', entry=43.125, exit=40.630001068115234, qty=243.86122317138964, pnl=-608.4334913407296, reason='signal_flip', exit_timestamp=Timestamp('2024-12-30 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-28 00:00:00'), side='LONG', entry=39.56999969482422, exit=37.459999084472656, qty=250.3937789825516, pnl=-528.3310264814181, reason='signal_flip', exit_timestamp=Timestamp('2025-02-28 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-29 00:00:00'), side='LONG', entry=27.434999465942383, exit=44.68000030517578, qty=341.88995494926064, pnl=5895.892560025469, reason='signal_flip', exit_timestamp=Timestamp('2025-08-29 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-10-22 00:00:00'), side='LONG', entry=46.994998931884766, exit=52.29999923706055, qty=325.04827404316444, pnl=1724.3811929958483, reason='signal_flip', exit_timestamp=Timestamp('2025-10-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-13 00:00:00'), side='LONG', entry=55.27999877929688, exit=52.33000183105469, qty=307.5257753231371, pnl=-907.2000987090693, reason='signal_flip', exit_timestamp=Timestamp('2025-11-13 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-22 00:00:00'), side='LONG', entry=56.150001525878906, exit=54.25, qty=286.6041664903477, pnl=-544.5483536549127, reason='signal_flip', exit_timestamp=Timestamp('2025-12-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-22 00:00:00'), side='LONG', entry=53.59999847412109, exit=53.900001525878906, qty=290.0797849762685, pnl=87.02482074613266, reason='signal_flip', exit_timestamp=Timestamp('2026-01-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-30 00:00:00'), side='LONG', entry=56.040000915527344, exit=54.0, qty=279.00250887603625, pnl=-569.1653735415398, reason='signal_flip', exit_timestamp=Timestamp('2026-01-30 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=52.52000045776367, exit=47.63999938964844, qty=286.8647248284408, pnl=-1399.9001635673737, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-06 00:00:00'), side='LONG', entry=49.79999923706055, exit=47.540000915527344, qty=274.4224001025354, pnl=-620.1941636228431, reason='signal_flip', exit_timestamp=Timestamp('2026-03-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-11 00:00:00'), side='LONG', entry=49.38999938964844, exit=49.34999847412109, qty=264.1433754471769, pnl=-10.565976848371845, reason='signal_flip', exit_timestamp=Timestamp('2026-03-11 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-15 00:00:00'), side='LONG', entry=50.65999984741211, exit=84.58999633789062, qty=257.31297304639196, pnl=8730.628272418671, reason='signal_flip', exit_timestamp=Timestamp('2026-06-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-08-27 00:00:00'), side='LONG', entry=73.05999755859375, exit=73.30000305175781, qty=297.9209440874911, pnl=71.50266310962138, reason='signal_flip', exit_timestamp=Timestamp('2026-08-27 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  21837.606111\n676 2026-09-14  21837.606111\n677 2026-09-15  21837.606111\n678 2026-09-16  21837.606111\n679 2026-09-17  21837.606111\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 10,
+      "slow_window": 20,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 21837.606110795663,
+    "return_pct": 118.37606110795664,
+    "rate_factor": 2.1837606110795664,
+    "profit_factor": 2.3982930151802346,
+    "win_rate": 40.0,
+    "max_drawdown": 6642.037921476995,
+    "max_drawdown_pct": 28.897773067287357,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-03-20 00:00:00'), side='LONG', entry=27.96500015258789, exit=30.850000381469727, qty=357.58984249726876, pnl=1031.6467774504401, reason='signal_flip', exit_timestamp=Timestamp('2024-03-20 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-03-26 00:00:00'), side='LONG', entry=30.9950008392334, exit=30.70499992370605, qty=355.9169697936129, pnl=-103.21624709186696, reason='signal_flip', exit_timestamp=Timestamp('2024-03-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-04-09 00:00:00'), side='LONG', entry=30.780000686645508, exit=30.26000022888184, qty=355.04971691245225, pnl=-184.62601532333602, reason='signal_flip', exit_timestamp=Timestamp('2024-04-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-23 00:00:00'), side='LONG', entry=29.225000381469727, exit=36.68000030517578, qty=367.6237596166947, pnl=2740.635099894992, reason='signal_flip', exit_timestamp=Timestamp('2024-07-23 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-06 00:00:00'), side='LONG', entry=35.43000030517578, exit=28.4950008392334, qty=380.5938328755916, pnl=-2639.418027733192, reason='signal_flip', exit_timestamp=Timestamp('2024-09-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-04 00:00:00'), side='LONG', entry=35.064998626708984, exit=35.1349983215332, qty=309.2833883340407, pnl=21.649742797583187, reason='signal_flip', exit_timestamp=Timestamp('2024-11-04 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-29 00:00:00'), side='LONG', entry=41.275001525878906, exit=39.94499969482422, qty=263.27488620881957, pnl=-350.1560807284445, reason='signal_flip', exit_timestamp=Timestamp('2024-11-29 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-12-30 00:00:00'), side='LONG', entry=43.125, exit=40.630001068115234, qty=243.86122317138964, pnl=-608.4334913407296, reason='signal_flip', exit_timestamp=Timestamp('2024-12-30 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-28 00:00:00'), side='LONG', entry=39.56999969482422, exit=37.459999084472656, qty=250.3937789825516, pnl=-528.3310264814181, reason='signal_flip', exit_timestamp=Timestamp('2025-02-28 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-29 00:00:00'), side='LONG', entry=27.434999465942383, exit=44.68000030517578, qty=341.88995494926064, pnl=5895.892560025469, reason='signal_flip', exit_timestamp=Timestamp('2025-08-29 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-10-22 00:00:00'), side='LONG', entry=46.994998931884766, exit=52.29999923706055, qty=325.04827404316444, pnl=1724.3811929958483, reason='signal_flip', exit_timestamp=Timestamp('2025-10-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-13 00:00:00'), side='LONG', entry=55.27999877929688, exit=52.33000183105469, qty=307.5257753231371, pnl=-907.2000987090693, reason='signal_flip', exit_timestamp=Timestamp('2025-11-13 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-22 00:00:00'), side='LONG', entry=56.150001525878906, exit=54.25, qty=286.6041664903477, pnl=-544.5483536549127, reason='signal_flip', exit_timestamp=Timestamp('2025-12-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-22 00:00:00'), side='LONG', entry=53.59999847412109, exit=53.900001525878906, qty=290.0797849762685, pnl=87.02482074613266, reason='signal_flip', exit_timestamp=Timestamp('2026-01-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-30 00:00:00'), side='LONG', entry=56.040000915527344, exit=54.0, qty=279.00250887603625, pnl=-569.1653735415398, reason='signal_flip', exit_timestamp=Timestamp('2026-01-30 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=52.52000045776367, exit=47.63999938964844, qty=286.8647248284408, pnl=-1399.9001635673737, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-06 00:00:00'), side='LONG', entry=49.79999923706055, exit=47.540000915527344, qty=274.4224001025354, pnl=-620.1941636228431, reason='signal_flip', exit_timestamp=Timestamp('2026-03-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-11 00:00:00'), side='LONG', entry=49.38999938964844, exit=49.34999847412109, qty=264.1433754471769, pnl=-10.565976848371845, reason='signal_flip', exit_timestamp=Timestamp('2026-03-11 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-15 00:00:00'), side='LONG', entry=50.65999984741211, exit=84.58999633789062, qty=257.31297304639196, pnl=8730.628272418671, reason='signal_flip', exit_timestamp=Timestamp('2026-06-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-08-27 00:00:00'), side='LONG', entry=73.05999755859375, exit=73.30000305175781, qty=297.9209440874911, pnl=71.50266310962138, reason='signal_flip', exit_timestamp=Timestamp('2026-08-27 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  21837.606111\n676 2026-09-14  21837.606111\n677 2026-09-15  21837.606111\n678 2026-09-16  21837.606111\n679 2026-09-17  21837.606111\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 10,
+      "slow_window": 20,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 21071.734324625373,
+    "return_pct": 110.71734324625373,
+    "rate_factor": 2.1071734324625373,
+    "profit_factor": 2.111095636082011,
+    "win_rate": 46.666666666666664,
+    "max_drawdown": 7584.59403327449,
+    "max_drawdown_pct": 31.90976932696092,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-04-08 00:00:00'), side='LONG', entry=28.3700008392334, exit=29.950000762939453, qty=352.4850089595632, pnl=556.9262872636378, reason='signal_flip', exit_timestamp=Timestamp('2024-04-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-24 00:00:00'), side='LONG', entry=29.584999084472656, exit=32.724998474121094, qty=356.83375406302844, pnl=1120.4577699638699, reason='signal_flip', exit_timestamp=Timestamp('2024-07-24 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-09 00:00:00'), side='LONG', entry=34.189998626708984, exit=29.55500030517578, qty=341.5438586214279, pnl=-1583.055211440292, reason='signal_flip', exit_timestamp=Timestamp('2024-09-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-01-03 00:00:00'), side='LONG', entry=35.290000915527344, exit=41.20000076293945, qty=286.03934780137064, pnl=1690.4925018599597, reason='signal_flip', exit_timestamp=Timestamp('2025-01-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-05 00:00:00'), side='LONG', entry=39.56999969482422, exit=42.369998931884766, qty=297.82212379416916, pnl=833.9017194034254, reason='signal_flip', exit_timestamp=Timestamp('2025-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-27 00:00:00'), side='LONG', entry=43.005001068115234, exit=35.81999969482422, qty=293.4245495556184, pnl=-2108.2557915144157, reason='signal_flip', exit_timestamp=Timestamp('2025-02-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-29 00:00:00'), side='LONG', entry=29.71500015258789, exit=44.68000030517578, qty=353.70914425591286, pnl=5293.257397761468, reason='signal_flip', exit_timestamp=Timestamp('2025-08-29 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=44.55500030517578, exit=51.025001525878906, qty=354.7014827752519, pnl=2294.9190265410884, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-19 00:00:00'), side='LONG', entry=56.150001525878906, exit=53.52000045776367, qty=322.3266822441185, pnl=-847.7195185840715, reason='signal_flip', exit_timestamp=Timestamp('2025-12-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-08 00:00:00'), side='LONG', entry=55.310001373291016, exit=54.18999862670898, qty=311.8952043560258, pnl=-349.323485524515, reason='signal_flip', exit_timestamp=Timestamp('2026-01-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-22 00:00:00'), side='LONG', entry=55.59999847412109, exit=53.900001525878906, qty=303.98563236646436, pnl=-516.7746473324588, reason='signal_flip', exit_timestamp=Timestamp('2026-01-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=56.540000915527344, exit=47.63999938964844, qty=289.79175421092, pnl=-2579.1470546643127, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-15 00:00:00'), side='LONG', entry=50.65999984741211, exit=84.58999633789062, qty=272.51636469238207, pnl=9246.479297610487, reason='signal_flip', exit_timestamp=Timestamp('2026-06-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-26 00:00:00'), side='LONG', entry=74.44000244140625, exit=71.83000183105469, qty=309.67433550917525, pnl=-808.2502046891619, reason='signal_flip', exit_timestamp=Timestamp('2026-06-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-10 00:00:00'), side='LONG', entry=73.05999755859375, exit=69.20999908447266, qty=304.46083807784413, pnl=-1172.1737620293293, reason='signal_flip', exit_timestamp=Timestamp('2026-09-10 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  21071.734325\n676 2026-09-14  21071.734325\n677 2026-09-15  21071.734325\n678 2026-09-16  21071.734325\n679 2026-09-17  21071.734325\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 8,
+      "slow_window": 30,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 21071.734324625373,
+    "return_pct": 110.71734324625373,
+    "rate_factor": 2.1071734324625373,
+    "profit_factor": 2.111095636082011,
+    "win_rate": 46.666666666666664,
+    "max_drawdown": 7584.59403327449,
+    "max_drawdown_pct": 31.90976932696092,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-04-08 00:00:00'), side='LONG', entry=28.3700008392334, exit=29.950000762939453, qty=352.4850089595632, pnl=556.9262872636378, reason='signal_flip', exit_timestamp=Timestamp('2024-04-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-24 00:00:00'), side='LONG', entry=29.584999084472656, exit=32.724998474121094, qty=356.83375406302844, pnl=1120.4577699638699, reason='signal_flip', exit_timestamp=Timestamp('2024-07-24 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-09 00:00:00'), side='LONG', entry=34.189998626708984, exit=29.55500030517578, qty=341.5438586214279, pnl=-1583.055211440292, reason='signal_flip', exit_timestamp=Timestamp('2024-09-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-01-03 00:00:00'), side='LONG', entry=35.290000915527344, exit=41.20000076293945, qty=286.03934780137064, pnl=1690.4925018599597, reason='signal_flip', exit_timestamp=Timestamp('2025-01-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-05 00:00:00'), side='LONG', entry=39.56999969482422, exit=42.369998931884766, qty=297.82212379416916, pnl=833.9017194034254, reason='signal_flip', exit_timestamp=Timestamp('2025-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-27 00:00:00'), side='LONG', entry=43.005001068115234, exit=35.81999969482422, qty=293.4245495556184, pnl=-2108.2557915144157, reason='signal_flip', exit_timestamp=Timestamp('2025-02-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-29 00:00:00'), side='LONG', entry=29.71500015258789, exit=44.68000030517578, qty=353.70914425591286, pnl=5293.257397761468, reason='signal_flip', exit_timestamp=Timestamp('2025-08-29 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=44.55500030517578, exit=51.025001525878906, qty=354.7014827752519, pnl=2294.9190265410884, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-19 00:00:00'), side='LONG', entry=56.150001525878906, exit=53.52000045776367, qty=322.3266822441185, pnl=-847.7195185840715, reason='signal_flip', exit_timestamp=Timestamp('2025-12-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-08 00:00:00'), side='LONG', entry=55.310001373291016, exit=54.18999862670898, qty=311.8952043560258, pnl=-349.323485524515, reason='signal_flip', exit_timestamp=Timestamp('2026-01-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-22 00:00:00'), side='LONG', entry=55.59999847412109, exit=53.900001525878906, qty=303.98563236646436, pnl=-516.7746473324588, reason='signal_flip', exit_timestamp=Timestamp('2026-01-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=56.540000915527344, exit=47.63999938964844, qty=289.79175421092, pnl=-2579.1470546643127, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-15 00:00:00'), side='LONG', entry=50.65999984741211, exit=84.58999633789062, qty=272.51636469238207, pnl=9246.479297610487, reason='signal_flip', exit_timestamp=Timestamp('2026-06-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-26 00:00:00'), side='LONG', entry=74.44000244140625, exit=71.83000183105469, qty=309.67433550917525, pnl=-808.2502046891619, reason='signal_flip', exit_timestamp=Timestamp('2026-06-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-10 00:00:00'), side='LONG', entry=73.05999755859375, exit=69.20999908447266, qty=304.46083807784413, pnl=-1172.1737620293293, reason='signal_flip', exit_timestamp=Timestamp('2026-09-10 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  21071.734325\n676 2026-09-14  21071.734325\n677 2026-09-15  21071.734325\n678 2026-09-16  21071.734325\n679 2026-09-17  21071.734325\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 8,
+      "slow_window": 30,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 21071.734324625373,
+    "return_pct": 110.71734324625373,
+    "rate_factor": 2.1071734324625373,
+    "profit_factor": 2.111095636082011,
+    "win_rate": 46.666666666666664,
+    "max_drawdown": 7584.59403327449,
+    "max_drawdown_pct": 31.90976932696092,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-04-08 00:00:00'), side='LONG', entry=28.3700008392334, exit=29.950000762939453, qty=352.4850089595632, pnl=556.9262872636378, reason='signal_flip', exit_timestamp=Timestamp('2024-04-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-24 00:00:00'), side='LONG', entry=29.584999084472656, exit=32.724998474121094, qty=356.83375406302844, pnl=1120.4577699638699, reason='signal_flip', exit_timestamp=Timestamp('2024-07-24 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-09 00:00:00'), side='LONG', entry=34.189998626708984, exit=29.55500030517578, qty=341.5438586214279, pnl=-1583.055211440292, reason='signal_flip', exit_timestamp=Timestamp('2024-09-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-01-03 00:00:00'), side='LONG', entry=35.290000915527344, exit=41.20000076293945, qty=286.03934780137064, pnl=1690.4925018599597, reason='signal_flip', exit_timestamp=Timestamp('2025-01-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-05 00:00:00'), side='LONG', entry=39.56999969482422, exit=42.369998931884766, qty=297.82212379416916, pnl=833.9017194034254, reason='signal_flip', exit_timestamp=Timestamp('2025-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-27 00:00:00'), side='LONG', entry=43.005001068115234, exit=35.81999969482422, qty=293.4245495556184, pnl=-2108.2557915144157, reason='signal_flip', exit_timestamp=Timestamp('2025-02-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-29 00:00:00'), side='LONG', entry=29.71500015258789, exit=44.68000030517578, qty=353.70914425591286, pnl=5293.257397761468, reason='signal_flip', exit_timestamp=Timestamp('2025-08-29 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=44.55500030517578, exit=51.025001525878906, qty=354.7014827752519, pnl=2294.9190265410884, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-19 00:00:00'), side='LONG', entry=56.150001525878906, exit=53.52000045776367, qty=322.3266822441185, pnl=-847.7195185840715, reason='signal_flip', exit_timestamp=Timestamp('2025-12-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-08 00:00:00'), side='LONG', entry=55.310001373291016, exit=54.18999862670898, qty=311.8952043560258, pnl=-349.323485524515, reason='signal_flip', exit_timestamp=Timestamp('2026-01-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-22 00:00:00'), side='LONG', entry=55.59999847412109, exit=53.900001525878906, qty=303.98563236646436, pnl=-516.7746473324588, reason='signal_flip', exit_timestamp=Timestamp('2026-01-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=56.540000915527344, exit=47.63999938964844, qty=289.79175421092, pnl=-2579.1470546643127, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-15 00:00:00'), side='LONG', entry=50.65999984741211, exit=84.58999633789062, qty=272.51636469238207, pnl=9246.479297610487, reason='signal_flip', exit_timestamp=Timestamp('2026-06-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-26 00:00:00'), side='LONG', entry=74.44000244140625, exit=71.83000183105469, qty=309.67433550917525, pnl=-808.2502046891619, reason='signal_flip', exit_timestamp=Timestamp('2026-06-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-10 00:00:00'), side='LONG', entry=73.05999755859375, exit=69.20999908447266, qty=304.46083807784413, pnl=-1172.1737620293293, reason='signal_flip', exit_timestamp=Timestamp('2026-09-10 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  21071.734325\n676 2026-09-14  21071.734325\n677 2026-09-15  21071.734325\n678 2026-09-16  21071.734325\n679 2026-09-17  21071.734325\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 8,
+      "slow_window": 30,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 21071.734324625373,
+    "return_pct": 110.71734324625373,
+    "rate_factor": 2.1071734324625373,
+    "profit_factor": 2.111095636082011,
+    "win_rate": 46.666666666666664,
+    "max_drawdown": 7584.59403327449,
+    "max_drawdown_pct": 31.90976932696092,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-04-08 00:00:00'), side='LONG', entry=28.3700008392334, exit=29.950000762939453, qty=352.4850089595632, pnl=556.9262872636378, reason='signal_flip', exit_timestamp=Timestamp('2024-04-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-24 00:00:00'), side='LONG', entry=29.584999084472656, exit=32.724998474121094, qty=356.83375406302844, pnl=1120.4577699638699, reason='signal_flip', exit_timestamp=Timestamp('2024-07-24 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-09 00:00:00'), side='LONG', entry=34.189998626708984, exit=29.55500030517578, qty=341.5438586214279, pnl=-1583.055211440292, reason='signal_flip', exit_timestamp=Timestamp('2024-09-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-01-03 00:00:00'), side='LONG', entry=35.290000915527344, exit=41.20000076293945, qty=286.03934780137064, pnl=1690.4925018599597, reason='signal_flip', exit_timestamp=Timestamp('2025-01-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-05 00:00:00'), side='LONG', entry=39.56999969482422, exit=42.369998931884766, qty=297.82212379416916, pnl=833.9017194034254, reason='signal_flip', exit_timestamp=Timestamp('2025-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-27 00:00:00'), side='LONG', entry=43.005001068115234, exit=35.81999969482422, qty=293.4245495556184, pnl=-2108.2557915144157, reason='signal_flip', exit_timestamp=Timestamp('2025-02-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-29 00:00:00'), side='LONG', entry=29.71500015258789, exit=44.68000030517578, qty=353.70914425591286, pnl=5293.257397761468, reason='signal_flip', exit_timestamp=Timestamp('2025-08-29 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=44.55500030517578, exit=51.025001525878906, qty=354.7014827752519, pnl=2294.9190265410884, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-19 00:00:00'), side='LONG', entry=56.150001525878906, exit=53.52000045776367, qty=322.3266822441185, pnl=-847.7195185840715, reason='signal_flip', exit_timestamp=Timestamp('2025-12-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-08 00:00:00'), side='LONG', entry=55.310001373291016, exit=54.18999862670898, qty=311.8952043560258, pnl=-349.323485524515, reason='signal_flip', exit_timestamp=Timestamp('2026-01-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-22 00:00:00'), side='LONG', entry=55.59999847412109, exit=53.900001525878906, qty=303.98563236646436, pnl=-516.7746473324588, reason='signal_flip', exit_timestamp=Timestamp('2026-01-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=56.540000915527344, exit=47.63999938964844, qty=289.79175421092, pnl=-2579.1470546643127, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-15 00:00:00'), side='LONG', entry=50.65999984741211, exit=84.58999633789062, qty=272.51636469238207, pnl=9246.479297610487, reason='signal_flip', exit_timestamp=Timestamp('2026-06-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-26 00:00:00'), side='LONG', entry=74.44000244140625, exit=71.83000183105469, qty=309.67433550917525, pnl=-808.2502046891619, reason='signal_flip', exit_timestamp=Timestamp('2026-06-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-10 00:00:00'), side='LONG', entry=73.05999755859375, exit=69.20999908447266, qty=304.46083807784413, pnl=-1172.1737620293293, reason='signal_flip', exit_timestamp=Timestamp('2026-09-10 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  21071.734325\n676 2026-09-14  21071.734325\n677 2026-09-15  21071.734325\n678 2026-09-16  21071.734325\n679 2026-09-17  21071.734325\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 8,
+      "slow_window": 30,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 20801.900231579624,
+    "return_pct": 108.01900231579626,
+    "rate_factor": 2.0801900231579626,
+    "profit_factor": 2.118141372915975,
+    "win_rate": 52.94117647058824,
+    "max_drawdown": 6919.039924777919,
+    "max_drawdown_pct": 27.678680531454404,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-03-19 00:00:00'), side='LONG', entry=27.96500015258789, exit=29.899999618530277, qty=357.58984249726876, pnl=691.9361542586371, reason='signal_flip', exit_timestamp=Timestamp('2024-03-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-04-08 00:00:00'), side='LONG', entry=30.9950008392334, exit=29.950000762939453, qty=344.9567951204831, pnl=-360.47987721901967, reason='signal_flip', exit_timestamp=Timestamp('2024-04-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-22 00:00:00'), side='LONG', entry=29.280000686645508, exit=37.08000183105469, qty=352.85027441108474, pnl=2752.232544211554, reason='signal_flip', exit_timestamp=Timestamp('2024-07-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-05 00:00:00'), side='LONG', entry=35.650001525878906, exit=31.01000022888184, qty=367.003878295868, pnl=-1702.898471295781, reason='signal_flip', exit_timestamp=Timestamp('2024-09-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-01 00:00:00'), side='LONG', entry=35.290000915527344, exit=35.46500015258789, qty=322.4933424398956, pnl=56.43608888408742, reason='signal_flip', exit_timestamp=Timestamp('2024-11-01 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-26 00:00:00'), side='LONG', entry=41.275001525878906, exit=39.915000915527344, qty=277.09814696599057, pnl=-376.8536490010341, reason='signal_flip', exit_timestamp=Timestamp('2024-11-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-12-27 00:00:00'), side='LONG', entry=38.95000076293945, exit=42.33000183105469, qty=283.9633523284108, pnl=959.7964341756111, reason='signal_flip', exit_timestamp=Timestamp('2024-12-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-27 00:00:00'), side='LONG', entry=43.375, exit=35.81999969482422, qty=277.122057037788, pnl=-2093.6572254914286, reason='signal_flip', exit_timestamp=Timestamp('2025-02-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-27 00:00:00'), side='LONG', entry=27.434999465942383, exit=45.52000045776367, qty=361.81928892855746, pnl=6543.502199133035, reason='signal_flip', exit_timestamp=Timestamp('2025-08-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-10-17 00:00:00'), side='LONG', entry=46.994998931884766, exit=51.994998931884766, qty=350.46312526844696, pnl=1752.3156263422347, reason='signal_flip', exit_timestamp=Timestamp('2025-10-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-13 00:00:00'), side='LONG', entry=52.29999923706055, exit=52.33000183105469, qty=348.41931338089364, pnl=10.4534831990842, reason='signal_flip', exit_timestamp=Timestamp('2025-11-13 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-19 00:00:00'), side='LONG', entry=55.68999862670898, exit=53.52000045776367, qty=327.39780493462825, pnl=-710.4526372248556, reason='signal_flip', exit_timestamp=Timestamp('2025-12-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-21 00:00:00'), side='LONG', entry=52.720001220703125, exit=52.72999954223633, qty=332.36590030827074, pnl=3.3231011379546267, reason='signal_flip', exit_timestamp=Timestamp('2026-01-21 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=56.040000915527344, exit=47.63999938964844, qty=312.73471600272836, pnl=-2626.9720916182246, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-06 00:00:00'), side='LONG', entry=50.2599983215332, exit=47.540000915527344, qty=296.4321961210397, pnl=-806.2948045058481, reason='signal_flip', exit_timestamp=Timestamp('2026-03-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-11 00:00:00'), side='LONG', entry=49.16999816894531, exit=76.01000213623047, qty=286.6053975956104, pnl=7692.490008511522, reason='signal_flip', exit_timestamp=Timestamp('2026-06-11 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-08-26 00:00:00'), side='LONG', entry=73.80000305175781, exit=70.47000122070312, qty=295.1880214451921, pnl=-982.9766519179, reason='signal_flip', exit_timestamp=Timestamp('2026-08-26 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  20801.900232\n676 2026-09-14  20801.900232\n677 2026-09-15  20801.900232\n678 2026-09-16  20801.900232\n679 2026-09-17  20801.900232\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 8,
+      "slow_window": 20,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 20801.900231579624,
+    "return_pct": 108.01900231579626,
+    "rate_factor": 2.0801900231579626,
+    "profit_factor": 2.118141372915975,
+    "win_rate": 52.94117647058824,
+    "max_drawdown": 6919.039924777919,
+    "max_drawdown_pct": 27.678680531454404,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-03-19 00:00:00'), side='LONG', entry=27.96500015258789, exit=29.899999618530277, qty=357.58984249726876, pnl=691.9361542586371, reason='signal_flip', exit_timestamp=Timestamp('2024-03-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-04-08 00:00:00'), side='LONG', entry=30.9950008392334, exit=29.950000762939453, qty=344.9567951204831, pnl=-360.47987721901967, reason='signal_flip', exit_timestamp=Timestamp('2024-04-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-22 00:00:00'), side='LONG', entry=29.280000686645508, exit=37.08000183105469, qty=352.85027441108474, pnl=2752.232544211554, reason='signal_flip', exit_timestamp=Timestamp('2024-07-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-05 00:00:00'), side='LONG', entry=35.650001525878906, exit=31.01000022888184, qty=367.003878295868, pnl=-1702.898471295781, reason='signal_flip', exit_timestamp=Timestamp('2024-09-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-01 00:00:00'), side='LONG', entry=35.290000915527344, exit=35.46500015258789, qty=322.4933424398956, pnl=56.43608888408742, reason='signal_flip', exit_timestamp=Timestamp('2024-11-01 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-26 00:00:00'), side='LONG', entry=41.275001525878906, exit=39.915000915527344, qty=277.09814696599057, pnl=-376.8536490010341, reason='signal_flip', exit_timestamp=Timestamp('2024-11-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-12-27 00:00:00'), side='LONG', entry=38.95000076293945, exit=42.33000183105469, qty=283.9633523284108, pnl=959.7964341756111, reason='signal_flip', exit_timestamp=Timestamp('2024-12-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-27 00:00:00'), side='LONG', entry=43.375, exit=35.81999969482422, qty=277.122057037788, pnl=-2093.6572254914286, reason='signal_flip', exit_timestamp=Timestamp('2025-02-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-27 00:00:00'), side='LONG', entry=27.434999465942383, exit=45.52000045776367, qty=361.81928892855746, pnl=6543.502199133035, reason='signal_flip', exit_timestamp=Timestamp('2025-08-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-10-17 00:00:00'), side='LONG', entry=46.994998931884766, exit=51.994998931884766, qty=350.46312526844696, pnl=1752.3156263422347, reason='signal_flip', exit_timestamp=Timestamp('2025-10-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-13 00:00:00'), side='LONG', entry=52.29999923706055, exit=52.33000183105469, qty=348.41931338089364, pnl=10.4534831990842, reason='signal_flip', exit_timestamp=Timestamp('2025-11-13 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-19 00:00:00'), side='LONG', entry=55.68999862670898, exit=53.52000045776367, qty=327.39780493462825, pnl=-710.4526372248556, reason='signal_flip', exit_timestamp=Timestamp('2025-12-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-21 00:00:00'), side='LONG', entry=52.720001220703125, exit=52.72999954223633, qty=332.36590030827074, pnl=3.3231011379546267, reason='signal_flip', exit_timestamp=Timestamp('2026-01-21 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=56.040000915527344, exit=47.63999938964844, qty=312.73471600272836, pnl=-2626.9720916182246, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-06 00:00:00'), side='LONG', entry=50.2599983215332, exit=47.540000915527344, qty=296.4321961210397, pnl=-806.2948045058481, reason='signal_flip', exit_timestamp=Timestamp('2026-03-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-11 00:00:00'), side='LONG', entry=49.16999816894531, exit=76.01000213623047, qty=286.6053975956104, pnl=7692.490008511522, reason='signal_flip', exit_timestamp=Timestamp('2026-06-11 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-08-26 00:00:00'), side='LONG', entry=73.80000305175781, exit=70.47000122070312, qty=295.1880214451921, pnl=-982.9766519179, reason='signal_flip', exit_timestamp=Timestamp('2026-08-26 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  20801.900232\n676 2026-09-14  20801.900232\n677 2026-09-15  20801.900232\n678 2026-09-16  20801.900232\n679 2026-09-17  20801.900232\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 8,
+      "slow_window": 20,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 20801.900231579624,
+    "return_pct": 108.01900231579626,
+    "rate_factor": 2.0801900231579626,
+    "profit_factor": 2.118141372915975,
+    "win_rate": 52.94117647058824,
+    "max_drawdown": 6919.039924777919,
+    "max_drawdown_pct": 27.678680531454404,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-03-19 00:00:00'), side='LONG', entry=27.96500015258789, exit=29.899999618530277, qty=357.58984249726876, pnl=691.9361542586371, reason='signal_flip', exit_timestamp=Timestamp('2024-03-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-04-08 00:00:00'), side='LONG', entry=30.9950008392334, exit=29.950000762939453, qty=344.9567951204831, pnl=-360.47987721901967, reason='signal_flip', exit_timestamp=Timestamp('2024-04-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-22 00:00:00'), side='LONG', entry=29.280000686645508, exit=37.08000183105469, qty=352.85027441108474, pnl=2752.232544211554, reason='signal_flip', exit_timestamp=Timestamp('2024-07-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-05 00:00:00'), side='LONG', entry=35.650001525878906, exit=31.01000022888184, qty=367.003878295868, pnl=-1702.898471295781, reason='signal_flip', exit_timestamp=Timestamp('2024-09-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-01 00:00:00'), side='LONG', entry=35.290000915527344, exit=35.46500015258789, qty=322.4933424398956, pnl=56.43608888408742, reason='signal_flip', exit_timestamp=Timestamp('2024-11-01 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-26 00:00:00'), side='LONG', entry=41.275001525878906, exit=39.915000915527344, qty=277.09814696599057, pnl=-376.8536490010341, reason='signal_flip', exit_timestamp=Timestamp('2024-11-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-12-27 00:00:00'), side='LONG', entry=38.95000076293945, exit=42.33000183105469, qty=283.9633523284108, pnl=959.7964341756111, reason='signal_flip', exit_timestamp=Timestamp('2024-12-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-27 00:00:00'), side='LONG', entry=43.375, exit=35.81999969482422, qty=277.122057037788, pnl=-2093.6572254914286, reason='signal_flip', exit_timestamp=Timestamp('2025-02-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-27 00:00:00'), side='LONG', entry=27.434999465942383, exit=45.52000045776367, qty=361.81928892855746, pnl=6543.502199133035, reason='signal_flip', exit_timestamp=Timestamp('2025-08-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-10-17 00:00:00'), side='LONG', entry=46.994998931884766, exit=51.994998931884766, qty=350.46312526844696, pnl=1752.3156263422347, reason='signal_flip', exit_timestamp=Timestamp('2025-10-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-13 00:00:00'), side='LONG', entry=52.29999923706055, exit=52.33000183105469, qty=348.41931338089364, pnl=10.4534831990842, reason='signal_flip', exit_timestamp=Timestamp('2025-11-13 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-19 00:00:00'), side='LONG', entry=55.68999862670898, exit=53.52000045776367, qty=327.39780493462825, pnl=-710.4526372248556, reason='signal_flip', exit_timestamp=Timestamp('2025-12-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-21 00:00:00'), side='LONG', entry=52.720001220703125, exit=52.72999954223633, qty=332.36590030827074, pnl=3.3231011379546267, reason='signal_flip', exit_timestamp=Timestamp('2026-01-21 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=56.040000915527344, exit=47.63999938964844, qty=312.73471600272836, pnl=-2626.9720916182246, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-06 00:00:00'), side='LONG', entry=50.2599983215332, exit=47.540000915527344, qty=296.4321961210397, pnl=-806.2948045058481, reason='signal_flip', exit_timestamp=Timestamp('2026-03-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-11 00:00:00'), side='LONG', entry=49.16999816894531, exit=76.01000213623047, qty=286.6053975956104, pnl=7692.490008511522, reason='signal_flip', exit_timestamp=Timestamp('2026-06-11 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-08-26 00:00:00'), side='LONG', entry=73.80000305175781, exit=70.47000122070312, qty=295.1880214451921, pnl=-982.9766519179, reason='signal_flip', exit_timestamp=Timestamp('2026-08-26 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  20801.900232\n676 2026-09-14  20801.900232\n677 2026-09-15  20801.900232\n678 2026-09-16  20801.900232\n679 2026-09-17  20801.900232\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 8,
+      "slow_window": 20,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 20801.900231579624,
+    "return_pct": 108.01900231579626,
+    "rate_factor": 2.0801900231579626,
+    "profit_factor": 2.118141372915975,
+    "win_rate": 52.94117647058824,
+    "max_drawdown": 6919.039924777919,
+    "max_drawdown_pct": 27.678680531454404,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-03-19 00:00:00'), side='LONG', entry=27.96500015258789, exit=29.899999618530277, qty=357.58984249726876, pnl=691.9361542586371, reason='signal_flip', exit_timestamp=Timestamp('2024-03-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-04-08 00:00:00'), side='LONG', entry=30.9950008392334, exit=29.950000762939453, qty=344.9567951204831, pnl=-360.47987721901967, reason='signal_flip', exit_timestamp=Timestamp('2024-04-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-22 00:00:00'), side='LONG', entry=29.280000686645508, exit=37.08000183105469, qty=352.85027441108474, pnl=2752.232544211554, reason='signal_flip', exit_timestamp=Timestamp('2024-07-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-05 00:00:00'), side='LONG', entry=35.650001525878906, exit=31.01000022888184, qty=367.003878295868, pnl=-1702.898471295781, reason='signal_flip', exit_timestamp=Timestamp('2024-09-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-01 00:00:00'), side='LONG', entry=35.290000915527344, exit=35.46500015258789, qty=322.4933424398956, pnl=56.43608888408742, reason='signal_flip', exit_timestamp=Timestamp('2024-11-01 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-11-26 00:00:00'), side='LONG', entry=41.275001525878906, exit=39.915000915527344, qty=277.09814696599057, pnl=-376.8536490010341, reason='signal_flip', exit_timestamp=Timestamp('2024-11-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-12-27 00:00:00'), side='LONG', entry=38.95000076293945, exit=42.33000183105469, qty=283.9633523284108, pnl=959.7964341756111, reason='signal_flip', exit_timestamp=Timestamp('2024-12-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-27 00:00:00'), side='LONG', entry=43.375, exit=35.81999969482422, qty=277.122057037788, pnl=-2093.6572254914286, reason='signal_flip', exit_timestamp=Timestamp('2025-02-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-27 00:00:00'), side='LONG', entry=27.434999465942383, exit=45.52000045776367, qty=361.81928892855746, pnl=6543.502199133035, reason='signal_flip', exit_timestamp=Timestamp('2025-08-27 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-10-17 00:00:00'), side='LONG', entry=46.994998931884766, exit=51.994998931884766, qty=350.46312526844696, pnl=1752.3156263422347, reason='signal_flip', exit_timestamp=Timestamp('2025-10-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-13 00:00:00'), side='LONG', entry=52.29999923706055, exit=52.33000183105469, qty=348.41931338089364, pnl=10.4534831990842, reason='signal_flip', exit_timestamp=Timestamp('2025-11-13 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-19 00:00:00'), side='LONG', entry=55.68999862670898, exit=53.52000045776367, qty=327.39780493462825, pnl=-710.4526372248556, reason='signal_flip', exit_timestamp=Timestamp('2025-12-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-21 00:00:00'), side='LONG', entry=52.720001220703125, exit=52.72999954223633, qty=332.36590030827074, pnl=3.3231011379546267, reason='signal_flip', exit_timestamp=Timestamp('2026-01-21 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=56.040000915527344, exit=47.63999938964844, qty=312.73471600272836, pnl=-2626.9720916182246, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-06 00:00:00'), side='LONG', entry=50.2599983215332, exit=47.540000915527344, qty=296.4321961210397, pnl=-806.2948045058481, reason='signal_flip', exit_timestamp=Timestamp('2026-03-06 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-11 00:00:00'), side='LONG', entry=49.16999816894531, exit=76.01000213623047, qty=286.6053975956104, pnl=7692.490008511522, reason='signal_flip', exit_timestamp=Timestamp('2026-06-11 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-08-26 00:00:00'), side='LONG', entry=73.80000305175781, exit=70.47000122070312, qty=295.1880214451921, pnl=-982.9766519179, reason='signal_flip', exit_timestamp=Timestamp('2026-08-26 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2024-01-02  10000.000000\n1   2024-01-03  10000.000000\n2   2024-01-04  10000.000000\n3   2024-01-05  10000.000000\n4   2024-01-08  10000.000000\n..         ...           ...\n675 2026-09-11  20801.900232\n676 2026-09-14  20801.900232\n677 2026-09-15  20801.900232\n678 2026-09-16  20801.900232\n679 2026-09-17  20801.900232\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 8,
+      "slow_window": 20,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 19496.97315993624,
+    "return_pct": 94.96973159936239,
+    "rate_factor": 1.949697315993624,
+    "profit_factor": 2.4317280652815603,
+    "win_rate": 54.54545454545454,
+    "max_drawdown": 5738.679866970704,
+    "max_drawdown_pct": 24.276414421985436,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-04-09 00:00:00'), side='LONG', entry=28.3700008392334, exit=30.26000022888184, qty=352.4850089595632, pnl=666.1964517937997, reason='signal_flip', exit_timestamp=Timestamp('2024-04-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-24 00:00:00'), side='LONG', entry=29.780000686645508, exit=32.724998474121094, qty=358.1664273290944, pnl=1054.7993360322182, reason='signal_flip', exit_timestamp=Timestamp('2024-07-24 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-10 00:00:00'), side='LONG', entry=35.26499938964844, exit=30.350000381469727, qty=332.3690909028218, pnl=-1633.593752136629, reason='signal_flip', exit_timestamp=Timestamp('2024-09-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-01-02 00:00:00'), side='LONG', entry=35.32500076293945, exit=39.31499862670898, qty=285.55985330005694, pnl=1139.383204645566, reason='signal_flip', exit_timestamp=Timestamp('2025-01-02 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-28 00:00:00'), side='LONG', entry=41.06999969482422, exit=37.459999084472656, qty=273.35732465928874, pnl=-986.8201088641025, reason='signal_flip', exit_timestamp=Timestamp('2025-02-28 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-09-02 00:00:00'), side='LONG', entry=29.200000762939453, exit=43.540000915527344, qty=350.683728216452, pnl=5028.804716134012, reason='signal_flip', exit_timestamp=Timestamp('2025-09-02 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=45.90999984741211, exit=51.025001525878906, qty=332.58048134072345, pnl=1701.1497202830956, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-09 00:00:00'), side='LONG', entry=56.0099983215332, exit=55.7599983215332, qty=302.98018347491757, pnl=-75.74504586872939, reason='signal_flip', exit_timestamp=Timestamp('2026-01-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=55.59999847412109, exit=47.63999938964844, qty=303.8520680874224, pnl=-2418.6621837910034, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-17 00:00:00'), side='LONG', entry=53.40999984741211, exit=77.54000091552734, qty=271.02625687293664, pnl=6539.863867831235, reason='signal_flip', exit_timestamp=Timestamp('2026-06-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-10 00:00:00'), side='LONG', entry=74.5999984741211, exit=69.20999908447266, qty=281.7074616073851, pnl=-1518.4030461232162, reason='signal_flip', exit_timestamp=Timestamp('2026-09-10 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp       equity\n0   2024-01-02  10000.00000\n1   2024-01-03  10000.00000\n2   2024-01-04  10000.00000\n3   2024-01-05  10000.00000\n4   2024-01-08  10000.00000\n..         ...          ...\n675 2026-09-11  19496.97316\n676 2026-09-14  19496.97316\n677 2026-09-15  19496.97316\n678 2026-09-16  19496.97316\n679 2026-09-17  19496.97316\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 10,
+      "slow_window": 30,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 19496.97315993624,
+    "return_pct": 94.96973159936239,
+    "rate_factor": 1.949697315993624,
+    "profit_factor": 2.4317280652815603,
+    "win_rate": 54.54545454545454,
+    "max_drawdown": 5738.679866970704,
+    "max_drawdown_pct": 24.276414421985436,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-04-09 00:00:00'), side='LONG', entry=28.3700008392334, exit=30.26000022888184, qty=352.4850089595632, pnl=666.1964517937997, reason='signal_flip', exit_timestamp=Timestamp('2024-04-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-24 00:00:00'), side='LONG', entry=29.780000686645508, exit=32.724998474121094, qty=358.1664273290944, pnl=1054.7993360322182, reason='signal_flip', exit_timestamp=Timestamp('2024-07-24 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-10 00:00:00'), side='LONG', entry=35.26499938964844, exit=30.350000381469727, qty=332.3690909028218, pnl=-1633.593752136629, reason='signal_flip', exit_timestamp=Timestamp('2024-09-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-01-02 00:00:00'), side='LONG', entry=35.32500076293945, exit=39.31499862670898, qty=285.55985330005694, pnl=1139.383204645566, reason='signal_flip', exit_timestamp=Timestamp('2025-01-02 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-28 00:00:00'), side='LONG', entry=41.06999969482422, exit=37.459999084472656, qty=273.35732465928874, pnl=-986.8201088641025, reason='signal_flip', exit_timestamp=Timestamp('2025-02-28 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-09-02 00:00:00'), side='LONG', entry=29.200000762939453, exit=43.540000915527344, qty=350.683728216452, pnl=5028.804716134012, reason='signal_flip', exit_timestamp=Timestamp('2025-09-02 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=45.90999984741211, exit=51.025001525878906, qty=332.58048134072345, pnl=1701.1497202830956, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-09 00:00:00'), side='LONG', entry=56.0099983215332, exit=55.7599983215332, qty=302.98018347491757, pnl=-75.74504586872939, reason='signal_flip', exit_timestamp=Timestamp('2026-01-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=55.59999847412109, exit=47.63999938964844, qty=303.8520680874224, pnl=-2418.6621837910034, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-17 00:00:00'), side='LONG', entry=53.40999984741211, exit=77.54000091552734, qty=271.02625687293664, pnl=6539.863867831235, reason='signal_flip', exit_timestamp=Timestamp('2026-06-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-10 00:00:00'), side='LONG', entry=74.5999984741211, exit=69.20999908447266, qty=281.7074616073851, pnl=-1518.4030461232162, reason='signal_flip', exit_timestamp=Timestamp('2026-09-10 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp       equity\n0   2024-01-02  10000.00000\n1   2024-01-03  10000.00000\n2   2024-01-04  10000.00000\n3   2024-01-05  10000.00000\n4   2024-01-08  10000.00000\n..         ...          ...\n675 2026-09-11  19496.97316\n676 2026-09-14  19496.97316\n677 2026-09-15  19496.97316\n678 2026-09-16  19496.97316\n679 2026-09-17  19496.97316\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 10,
+      "slow_window": 30,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 19496.97315993624,
+    "return_pct": 94.96973159936239,
+    "rate_factor": 1.949697315993624,
+    "profit_factor": 2.4317280652815603,
+    "win_rate": 54.54545454545454,
+    "max_drawdown": 5738.679866970704,
+    "max_drawdown_pct": 24.276414421985436,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-04-09 00:00:00'), side='LONG', entry=28.3700008392334, exit=30.26000022888184, qty=352.4850089595632, pnl=666.1964517937997, reason='signal_flip', exit_timestamp=Timestamp('2024-04-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-24 00:00:00'), side='LONG', entry=29.780000686645508, exit=32.724998474121094, qty=358.1664273290944, pnl=1054.7993360322182, reason='signal_flip', exit_timestamp=Timestamp('2024-07-24 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-10 00:00:00'), side='LONG', entry=35.26499938964844, exit=30.350000381469727, qty=332.3690909028218, pnl=-1633.593752136629, reason='signal_flip', exit_timestamp=Timestamp('2024-09-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-01-02 00:00:00'), side='LONG', entry=35.32500076293945, exit=39.31499862670898, qty=285.55985330005694, pnl=1139.383204645566, reason='signal_flip', exit_timestamp=Timestamp('2025-01-02 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-28 00:00:00'), side='LONG', entry=41.06999969482422, exit=37.459999084472656, qty=273.35732465928874, pnl=-986.8201088641025, reason='signal_flip', exit_timestamp=Timestamp('2025-02-28 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-09-02 00:00:00'), side='LONG', entry=29.200000762939453, exit=43.540000915527344, qty=350.683728216452, pnl=5028.804716134012, reason='signal_flip', exit_timestamp=Timestamp('2025-09-02 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=45.90999984741211, exit=51.025001525878906, qty=332.58048134072345, pnl=1701.1497202830956, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-09 00:00:00'), side='LONG', entry=56.0099983215332, exit=55.7599983215332, qty=302.98018347491757, pnl=-75.74504586872939, reason='signal_flip', exit_timestamp=Timestamp('2026-01-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=55.59999847412109, exit=47.63999938964844, qty=303.8520680874224, pnl=-2418.6621837910034, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-17 00:00:00'), side='LONG', entry=53.40999984741211, exit=77.54000091552734, qty=271.02625687293664, pnl=6539.863867831235, reason='signal_flip', exit_timestamp=Timestamp('2026-06-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-10 00:00:00'), side='LONG', entry=74.5999984741211, exit=69.20999908447266, qty=281.7074616073851, pnl=-1518.4030461232162, reason='signal_flip', exit_timestamp=Timestamp('2026-09-10 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp       equity\n0   2024-01-02  10000.00000\n1   2024-01-03  10000.00000\n2   2024-01-04  10000.00000\n3   2024-01-05  10000.00000\n4   2024-01-08  10000.00000\n..         ...          ...\n675 2026-09-11  19496.97316\n676 2026-09-14  19496.97316\n677 2026-09-15  19496.97316\n678 2026-09-16  19496.97316\n679 2026-09-17  19496.97316\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 10,
+      "slow_window": 30,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "TQQQ",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 19496.97315993624,
+    "return_pct": 94.96973159936239,
+    "rate_factor": 1.949697315993624,
+    "profit_factor": 2.4317280652815603,
+    "win_rate": 54.54545454545454,
+    "max_drawdown": 5738.679866970704,
+    "max_drawdown_pct": 24.276414421985436,
+    "trades": [
+      "Trade(timestamp=Timestamp('2024-04-09 00:00:00'), side='LONG', entry=28.3700008392334, exit=30.26000022888184, qty=352.4850089595632, pnl=666.1964517937997, reason='signal_flip', exit_timestamp=Timestamp('2024-04-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-07-24 00:00:00'), side='LONG', entry=29.780000686645508, exit=32.724998474121094, qty=358.1664273290944, pnl=1054.7993360322182, reason='signal_flip', exit_timestamp=Timestamp('2024-07-24 00:00:00'))",
+      "Trade(timestamp=Timestamp('2024-09-10 00:00:00'), side='LONG', entry=35.26499938964844, exit=30.350000381469727, qty=332.3690909028218, pnl=-1633.593752136629, reason='signal_flip', exit_timestamp=Timestamp('2024-09-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-01-02 00:00:00'), side='LONG', entry=35.32500076293945, exit=39.31499862670898, qty=285.55985330005694, pnl=1139.383204645566, reason='signal_flip', exit_timestamp=Timestamp('2025-01-02 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-02-28 00:00:00'), side='LONG', entry=41.06999969482422, exit=37.459999084472656, qty=273.35732465928874, pnl=-986.8201088641025, reason='signal_flip', exit_timestamp=Timestamp('2025-02-28 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-09-02 00:00:00'), side='LONG', entry=29.200000762939453, exit=43.540000915527344, qty=350.683728216452, pnl=5028.804716134012, reason='signal_flip', exit_timestamp=Timestamp('2025-09-02 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=45.90999984741211, exit=51.025001525878906, qty=332.58048134072345, pnl=1701.1497202830956, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-01-09 00:00:00'), side='LONG', entry=56.0099983215332, exit=55.7599983215332, qty=302.98018347491757, pnl=-75.74504586872939, reason='signal_flip', exit_timestamp=Timestamp('2026-01-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-02-05 00:00:00'), side='LONG', entry=55.59999847412109, exit=47.63999938964844, qty=303.8520680874224, pnl=-2418.6621837910034, reason='signal_flip', exit_timestamp=Timestamp('2026-02-05 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-17 00:00:00'), side='LONG', entry=53.40999984741211, exit=77.54000091552734, qty=271.02625687293664, pnl=6539.863867831235, reason='signal_flip', exit_timestamp=Timestamp('2026-06-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-10 00:00:00'), side='LONG', entry=74.5999984741211, exit=69.20999908447266, qty=281.7074616073851, pnl=-1518.4030461232162, reason='signal_flip', exit_timestamp=Timestamp('2026-09-10 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp       equity\n0   2024-01-02  10000.00000\n1   2024-01-03  10000.00000\n2   2024-01-04  10000.00000\n3   2024-01-05  10000.00000\n4   2024-01-08  10000.00000\n..         ...          ...\n675 2026-09-11  19496.97316\n676 2026-09-14  19496.97316\n677 2026-09-15  19496.97316\n678 2026-09-16  19496.97316\n679 2026-09-17  19496.97316\n\n[680 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 10,
+      "slow_window": 30,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  }
+]

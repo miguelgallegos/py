@@ -1,0 +1,726 @@
+[
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 25026.442150594576,
+    "return_pct": 150.26442150594573,
+    "rate_factor": 2.5026442150594574,
+    "profit_factor": 130.24630401787255,
+    "win_rate": 75.0,
+    "max_drawdown": 9112.43566786934,
+    "max_drawdown_pct": 30.816046547113444,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=15.5, exit=28.34000015258789, qty=645.1612903225806, pnl=8283.871066185735, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-10 00:00:00'), side='LONG', entry=29.8799991607666, exit=29.690000534057617, qty=611.9100260950826, pnl=-116.26206462752448, reason='signal_flip', exit_timestamp=Timestamp('2025-12-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-15 00:00:00'), side='LONG', entry=22.209999084472656, exit=29.75, qty=817.9923345543701, pnl=6167.6629514343, reason='signal_flip', exit_timestamp=Timestamp('2026-06-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.040000915527344, exit=32.95000076293945, qty=759.527817029464, pnl=691.1701976020648, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  24411.223576\n392 2026-09-14  24654.272245\n393 2026-09-15  24023.864215\n394 2026-09-16  23841.577713\n395 2026-09-17  25026.442151\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 8,
+      "slow_window": 40,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 25026.442150594576,
+    "return_pct": 150.26442150594573,
+    "rate_factor": 2.5026442150594574,
+    "profit_factor": 130.24630401787255,
+    "win_rate": 75.0,
+    "max_drawdown": 9112.43566786934,
+    "max_drawdown_pct": 30.816046547113444,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=15.5, exit=28.34000015258789, qty=645.1612903225806, pnl=8283.871066185735, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-10 00:00:00'), side='LONG', entry=29.8799991607666, exit=29.690000534057617, qty=611.9100260950826, pnl=-116.26206462752448, reason='signal_flip', exit_timestamp=Timestamp('2025-12-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-15 00:00:00'), side='LONG', entry=22.209999084472656, exit=29.75, qty=817.9923345543701, pnl=6167.6629514343, reason='signal_flip', exit_timestamp=Timestamp('2026-06-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.040000915527344, exit=32.95000076293945, qty=759.527817029464, pnl=691.1701976020648, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  24411.223576\n392 2026-09-14  24654.272245\n393 2026-09-15  24023.864215\n394 2026-09-16  23841.577713\n395 2026-09-17  25026.442151\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 8,
+      "slow_window": 40,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 25026.442150594576,
+    "return_pct": 150.26442150594573,
+    "rate_factor": 2.5026442150594574,
+    "profit_factor": 130.24630401787255,
+    "win_rate": 75.0,
+    "max_drawdown": 9112.43566786934,
+    "max_drawdown_pct": 30.816046547113444,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=15.5, exit=28.34000015258789, qty=645.1612903225806, pnl=8283.871066185735, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-10 00:00:00'), side='LONG', entry=29.8799991607666, exit=29.690000534057617, qty=611.9100260950826, pnl=-116.26206462752448, reason='signal_flip', exit_timestamp=Timestamp('2025-12-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-15 00:00:00'), side='LONG', entry=22.209999084472656, exit=29.75, qty=817.9923345543701, pnl=6167.6629514343, reason='signal_flip', exit_timestamp=Timestamp('2026-06-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.040000915527344, exit=32.95000076293945, qty=759.527817029464, pnl=691.1701976020648, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  24411.223576\n392 2026-09-14  24654.272245\n393 2026-09-15  24023.864215\n394 2026-09-16  23841.577713\n395 2026-09-17  25026.442151\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 8,
+      "slow_window": 40,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 25026.442150594576,
+    "return_pct": 150.26442150594573,
+    "rate_factor": 2.5026442150594574,
+    "profit_factor": 130.24630401787255,
+    "win_rate": 75.0,
+    "max_drawdown": 9112.43566786934,
+    "max_drawdown_pct": 30.816046547113444,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=15.5, exit=28.34000015258789, qty=645.1612903225806, pnl=8283.871066185735, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-10 00:00:00'), side='LONG', entry=29.8799991607666, exit=29.690000534057617, qty=611.9100260950826, pnl=-116.26206462752448, reason='signal_flip', exit_timestamp=Timestamp('2025-12-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-15 00:00:00'), side='LONG', entry=22.209999084472656, exit=29.75, qty=817.9923345543701, pnl=6167.6629514343, reason='signal_flip', exit_timestamp=Timestamp('2026-06-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.040000915527344, exit=32.95000076293945, qty=759.527817029464, pnl=691.1701976020648, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  24411.223576\n392 2026-09-14  24654.272245\n393 2026-09-15  24023.864215\n394 2026-09-16  23841.577713\n395 2026-09-17  25026.442151\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 8,
+      "slow_window": 40,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 22018.93601739414,
+    "return_pct": 120.1893601739414,
+    "rate_factor": 2.201893601739414,
+    "profit_factor": Infinity,
+    "win_rate": 100.0,
+    "max_drawdown": 8123.86319748087,
+    "max_drawdown_pct": 30.81604654711346,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-11-19 00:00:00'), side='LONG', entry=16.030000686645508, exit=27.670000076293945, qty=623.8302914316739, pnl=7261.384211508891, reason='signal_flip', exit_timestamp=Timestamp('2025-11-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-18 00:00:00'), side='LONG', entry=23.670000076293945, exit=29.36000061035156, qty=729.2515486215215, pnl=4149.441701118799, reason='signal_flip', exit_timestamp=Timestamp('2026-06-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.040000915527344, exit=32.95000076293945, qty=668.2529744327035, pnl=608.1101047664483, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  21477.650190\n392 2026-09-14  21691.490938\n393 2026-09-15  21136.841020\n394 2026-09-16  20976.460460\n395 2026-09-17  22018.936017\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 12,
+      "slow_window": 40,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 22018.93601739414,
+    "return_pct": 120.1893601739414,
+    "rate_factor": 2.201893601739414,
+    "profit_factor": Infinity,
+    "win_rate": 100.0,
+    "max_drawdown": 8123.86319748087,
+    "max_drawdown_pct": 30.81604654711346,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-11-19 00:00:00'), side='LONG', entry=16.030000686645508, exit=27.670000076293945, qty=623.8302914316739, pnl=7261.384211508891, reason='signal_flip', exit_timestamp=Timestamp('2025-11-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-18 00:00:00'), side='LONG', entry=23.670000076293945, exit=29.36000061035156, qty=729.2515486215215, pnl=4149.441701118799, reason='signal_flip', exit_timestamp=Timestamp('2026-06-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.040000915527344, exit=32.95000076293945, qty=668.2529744327035, pnl=608.1101047664483, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  21477.650190\n392 2026-09-14  21691.490938\n393 2026-09-15  21136.841020\n394 2026-09-16  20976.460460\n395 2026-09-17  22018.936017\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 12,
+      "slow_window": 40,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 22018.93601739414,
+    "return_pct": 120.1893601739414,
+    "rate_factor": 2.201893601739414,
+    "profit_factor": Infinity,
+    "win_rate": 100.0,
+    "max_drawdown": 8123.86319748087,
+    "max_drawdown_pct": 30.81604654711346,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-11-19 00:00:00'), side='LONG', entry=16.030000686645508, exit=27.670000076293945, qty=623.8302914316739, pnl=7261.384211508891, reason='signal_flip', exit_timestamp=Timestamp('2025-11-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-18 00:00:00'), side='LONG', entry=23.670000076293945, exit=29.36000061035156, qty=729.2515486215215, pnl=4149.441701118799, reason='signal_flip', exit_timestamp=Timestamp('2026-06-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.040000915527344, exit=32.95000076293945, qty=668.2529744327035, pnl=608.1101047664483, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  21477.650190\n392 2026-09-14  21691.490938\n393 2026-09-15  21136.841020\n394 2026-09-16  20976.460460\n395 2026-09-17  22018.936017\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 12,
+      "slow_window": 40,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 22018.93601739414,
+    "return_pct": 120.1893601739414,
+    "rate_factor": 2.201893601739414,
+    "profit_factor": Infinity,
+    "win_rate": 100.0,
+    "max_drawdown": 8123.86319748087,
+    "max_drawdown_pct": 30.81604654711346,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-11-19 00:00:00'), side='LONG', entry=16.030000686645508, exit=27.670000076293945, qty=623.8302914316739, pnl=7261.384211508891, reason='signal_flip', exit_timestamp=Timestamp('2025-11-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-18 00:00:00'), side='LONG', entry=23.670000076293945, exit=29.36000061035156, qty=729.2515486215215, pnl=4149.441701118799, reason='signal_flip', exit_timestamp=Timestamp('2026-06-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.040000915527344, exit=32.95000076293945, qty=668.2529744327035, pnl=608.1101047664483, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  21477.650190\n392 2026-09-14  21691.490938\n393 2026-09-15  21136.841020\n394 2026-09-16  20976.460460\n395 2026-09-17  22018.936017\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 12,
+      "slow_window": 40,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 20976.722615399893,
+    "return_pct": 109.76722615399895,
+    "rate_factor": 2.0976722615399894,
+    "profit_factor": 5.311137528429385,
+    "win_rate": 83.33333333333334,
+    "max_drawdown": 14195.637438917209,
+    "max_drawdown_pct": 42.08160608527681,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-08-22 00:00:00'), side='LONG', entry=14.609999656677246, exit=24.899999618530277, qty=684.4627128673253, pnl=7043.1212892946, reason='signal_flip', exit_timestamp=Timestamp('2025-08-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=26.61000061035156, exit=28.34000015258789, qty=640.4780495444503, pnl=1108.0267325243176, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-08 00:00:00'), side='LONG', entry=29.51000022888184, exit=29.690000534057617, qty=615.084645240163, pnl=110.7154238521643, reason='signal_flip', exit_timestamp=Timestamp('2025-12-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-10 00:00:00'), side='LONG', entry=19.56999969482422, exit=25.01000022888184, qty=933.1560414127595, pnl=5076.369363644507, reason='signal_flip', exit_timestamp=Timestamp('2026-06-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-07-17 00:00:00'), side='LONG', entry=29.790000915527344, exit=26.540000915527344, qty=783.4250450509746, pnl=-2546.1313964156675, reason='signal_flip', exit_timestamp=Timestamp('2026-07-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.65999984741211, exit=32.95000076293945, qty=636.6228263943922, pnl=184.62120249997895, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  20461.057252\n392 2026-09-14  20664.776362\n393 2026-09-15  20136.379465\n394 2026-09-16  19983.590132\n395 2026-09-17  20976.722615\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 5,
+      "slow_window": 40,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 20976.722615399893,
+    "return_pct": 109.76722615399895,
+    "rate_factor": 2.0976722615399894,
+    "profit_factor": 5.311137528429385,
+    "win_rate": 83.33333333333334,
+    "max_drawdown": 14195.637438917209,
+    "max_drawdown_pct": 42.08160608527681,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-08-22 00:00:00'), side='LONG', entry=14.609999656677246, exit=24.899999618530277, qty=684.4627128673253, pnl=7043.1212892946, reason='signal_flip', exit_timestamp=Timestamp('2025-08-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=26.61000061035156, exit=28.34000015258789, qty=640.4780495444503, pnl=1108.0267325243176, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-08 00:00:00'), side='LONG', entry=29.51000022888184, exit=29.690000534057617, qty=615.084645240163, pnl=110.7154238521643, reason='signal_flip', exit_timestamp=Timestamp('2025-12-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-10 00:00:00'), side='LONG', entry=19.56999969482422, exit=25.01000022888184, qty=933.1560414127595, pnl=5076.369363644507, reason='signal_flip', exit_timestamp=Timestamp('2026-06-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-07-17 00:00:00'), side='LONG', entry=29.790000915527344, exit=26.540000915527344, qty=783.4250450509746, pnl=-2546.1313964156675, reason='signal_flip', exit_timestamp=Timestamp('2026-07-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.65999984741211, exit=32.95000076293945, qty=636.6228263943922, pnl=184.62120249997895, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  20461.057252\n392 2026-09-14  20664.776362\n393 2026-09-15  20136.379465\n394 2026-09-16  19983.590132\n395 2026-09-17  20976.722615\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 5,
+      "slow_window": 40,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 20976.722615399893,
+    "return_pct": 109.76722615399895,
+    "rate_factor": 2.0976722615399894,
+    "profit_factor": 5.311137528429385,
+    "win_rate": 83.33333333333334,
+    "max_drawdown": 14195.637438917209,
+    "max_drawdown_pct": 42.08160608527681,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-08-22 00:00:00'), side='LONG', entry=14.609999656677246, exit=24.899999618530277, qty=684.4627128673253, pnl=7043.1212892946, reason='signal_flip', exit_timestamp=Timestamp('2025-08-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=26.61000061035156, exit=28.34000015258789, qty=640.4780495444503, pnl=1108.0267325243176, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-08 00:00:00'), side='LONG', entry=29.51000022888184, exit=29.690000534057617, qty=615.084645240163, pnl=110.7154238521643, reason='signal_flip', exit_timestamp=Timestamp('2025-12-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-10 00:00:00'), side='LONG', entry=19.56999969482422, exit=25.01000022888184, qty=933.1560414127595, pnl=5076.369363644507, reason='signal_flip', exit_timestamp=Timestamp('2026-06-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-07-17 00:00:00'), side='LONG', entry=29.790000915527344, exit=26.540000915527344, qty=783.4250450509746, pnl=-2546.1313964156675, reason='signal_flip', exit_timestamp=Timestamp('2026-07-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.65999984741211, exit=32.95000076293945, qty=636.6228263943922, pnl=184.62120249997895, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  20461.057252\n392 2026-09-14  20664.776362\n393 2026-09-15  20136.379465\n394 2026-09-16  19983.590132\n395 2026-09-17  20976.722615\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 5,
+      "slow_window": 40,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 20976.722615399893,
+    "return_pct": 109.76722615399895,
+    "rate_factor": 2.0976722615399894,
+    "profit_factor": 5.311137528429385,
+    "win_rate": 83.33333333333334,
+    "max_drawdown": 14195.637438917209,
+    "max_drawdown_pct": 42.08160608527681,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-08-22 00:00:00'), side='LONG', entry=14.609999656677246, exit=24.899999618530277, qty=684.4627128673253, pnl=7043.1212892946, reason='signal_flip', exit_timestamp=Timestamp('2025-08-22 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-17 00:00:00'), side='LONG', entry=26.61000061035156, exit=28.34000015258789, qty=640.4780495444503, pnl=1108.0267325243176, reason='signal_flip', exit_timestamp=Timestamp('2025-11-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-08 00:00:00'), side='LONG', entry=29.51000022888184, exit=29.690000534057617, qty=615.084645240163, pnl=110.7154238521643, reason='signal_flip', exit_timestamp=Timestamp('2025-12-08 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-10 00:00:00'), side='LONG', entry=19.56999969482422, exit=25.01000022888184, qty=933.1560414127595, pnl=5076.369363644507, reason='signal_flip', exit_timestamp=Timestamp('2026-06-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-07-17 00:00:00'), side='LONG', entry=29.790000915527344, exit=26.540000915527344, qty=783.4250450509746, pnl=-2546.1313964156675, reason='signal_flip', exit_timestamp=Timestamp('2026-07-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.65999984741211, exit=32.95000076293945, qty=636.6228263943922, pnl=184.62120249997895, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  20461.057252\n392 2026-09-14  20664.776362\n393 2026-09-15  20136.379465\n394 2026-09-16  19983.590132\n395 2026-09-17  20976.722615\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 5,
+      "slow_window": 40,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 19596.66571473783,
+    "return_pct": 95.96665714737829,
+    "rate_factor": 1.9596665714737829,
+    "profit_factor": Infinity,
+    "win_rate": 100.0,
+    "max_drawdown": 7859.228736421799,
+    "max_drawdown_pct": 30.816046547113444,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-11-18 00:00:00'), side='LONG', entry=16.350000381469727, exit=27.1299991607666, qty=611.6207808370145, pnl=6593.271270815619, reason='signal_flip', exit_timestamp=Timestamp('2025-11-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-17 00:00:00'), side='LONG', entry=23.520000457763672, exit=27.01000022888184, qty=705.4962137697738, pnl=2462.1816245812443, reason='signal_flip', exit_timestamp=Timestamp('2026-06-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.040000915527344, exit=32.95000076293945, qty=594.7394616384713, pnl=541.212819340969, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  19114.925934\n392 2026-09-14  19305.242380\n393 2026-09-15  18811.608672\n394 2026-09-16  18668.871338\n395 2026-09-17  19596.665715\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 10,
+      "slow_window": 40,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 19596.66571473783,
+    "return_pct": 95.96665714737829,
+    "rate_factor": 1.9596665714737829,
+    "profit_factor": Infinity,
+    "win_rate": 100.0,
+    "max_drawdown": 7859.228736421799,
+    "max_drawdown_pct": 30.816046547113444,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-11-18 00:00:00'), side='LONG', entry=16.350000381469727, exit=27.1299991607666, qty=611.6207808370145, pnl=6593.271270815619, reason='signal_flip', exit_timestamp=Timestamp('2025-11-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-17 00:00:00'), side='LONG', entry=23.520000457763672, exit=27.01000022888184, qty=705.4962137697738, pnl=2462.1816245812443, reason='signal_flip', exit_timestamp=Timestamp('2026-06-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.040000915527344, exit=32.95000076293945, qty=594.7394616384713, pnl=541.212819340969, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  19114.925934\n392 2026-09-14  19305.242380\n393 2026-09-15  18811.608672\n394 2026-09-16  18668.871338\n395 2026-09-17  19596.665715\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 10,
+      "slow_window": 40,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 19596.66571473783,
+    "return_pct": 95.96665714737829,
+    "rate_factor": 1.9596665714737829,
+    "profit_factor": Infinity,
+    "win_rate": 100.0,
+    "max_drawdown": 7859.228736421799,
+    "max_drawdown_pct": 30.816046547113444,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-11-18 00:00:00'), side='LONG', entry=16.350000381469727, exit=27.1299991607666, qty=611.6207808370145, pnl=6593.271270815619, reason='signal_flip', exit_timestamp=Timestamp('2025-11-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-17 00:00:00'), side='LONG', entry=23.520000457763672, exit=27.01000022888184, qty=705.4962137697738, pnl=2462.1816245812443, reason='signal_flip', exit_timestamp=Timestamp('2026-06-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.040000915527344, exit=32.95000076293945, qty=594.7394616384713, pnl=541.212819340969, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  19114.925934\n392 2026-09-14  19305.242380\n393 2026-09-15  18811.608672\n394 2026-09-16  18668.871338\n395 2026-09-17  19596.665715\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 10,
+      "slow_window": 40,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 19596.66571473783,
+    "return_pct": 95.96665714737829,
+    "rate_factor": 1.9596665714737829,
+    "profit_factor": Infinity,
+    "win_rate": 100.0,
+    "max_drawdown": 7859.228736421799,
+    "max_drawdown_pct": 30.816046547113444,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-11-18 00:00:00'), side='LONG', entry=16.350000381469727, exit=27.1299991607666, qty=611.6207808370145, pnl=6593.271270815619, reason='signal_flip', exit_timestamp=Timestamp('2025-11-18 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-17 00:00:00'), side='LONG', entry=23.520000457763672, exit=27.01000022888184, qty=705.4962137697738, pnl=2462.1816245812443, reason='signal_flip', exit_timestamp=Timestamp('2026-06-17 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-17 00:00:00'), side='LONG', entry=32.040000915527344, exit=32.95000076293945, qty=594.7394616384713, pnl=541.212819340969, reason='end_of_data', exit_timestamp=Timestamp('2026-09-17 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  19114.925934\n392 2026-09-14  19305.242380\n393 2026-09-15  18811.608672\n394 2026-09-16  18668.871338\n395 2026-09-17  19596.665715\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 10,
+      "slow_window": 40,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 17706.2594020153,
+    "return_pct": 77.06259402015301,
+    "rate_factor": 1.77062594020153,
+    "profit_factor": 1.9607887509318713,
+    "win_rate": 40.0,
+    "max_drawdown": 9893.17267077542,
+    "max_drawdown_pct": 36.56830768651068,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-08-07 00:00:00'), side='LONG', entry=14.579999923706056, exit=24.96999931335449, qty=685.8710598304395, pnl=7126.199893015791, reason='signal_flip', exit_timestamp=Timestamp('2025-08-07 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-21 00:00:00'), side='LONG', entry=25.729999542236328, exit=23.809999465942383, qty=665.6121336070286, pnl=-1277.9753473076705, reason='signal_flip', exit_timestamp=Timestamp('2025-08-21 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-10-03 00:00:00'), side='LONG', entry=26.61000061035156, exit=28.90999984741211, qty=595.5740015858174, pnl=1369.819749260479, reason='signal_flip', exit_timestamp=Timestamp('2025-10-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-10 00:00:00'), side='LONG', entry=29.38999938964844, exit=31.59000015258789, qty=585.8470449997025, pnl=1288.8639459651674, reason='signal_flip', exit_timestamp=Timestamp('2025-11-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-15 00:00:00'), side='LONG', entry=30.149999618530277, exit=25.239999771118164, qty=613.8278101190875, pnl=-3013.8944540220314, reason='signal_flip', exit_timestamp=Timestamp('2025-12-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-19 00:00:00'), side='LONG', entry=19.88999938964844, exit=18.3700008392334, qty=778.9348548182925, pnl=-1183.9798501915564, reason='signal_flip', exit_timestamp=Timestamp('2026-03-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-09 00:00:00'), side='LONG', entry=19.1200008392334, exit=27.059999465942383, qty=748.3804031722984, pnl=5942.139373443965, reason='signal_flip', exit_timestamp=Timestamp('2026-06-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-07-23 00:00:00'), side='LONG', entry=27.43000030517578, exit=25.450000762939453, qty=738.2855663455073, pnl=-1461.8050834037927, reason='signal_flip', exit_timestamp=Timestamp('2026-07-23 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-08-26 00:00:00'), side='LONG', entry=32.65999984741211, exit=31.459999084472656, qty=575.3021529254283, pnl=-690.363022431224, reason='signal_flip', exit_timestamp=Timestamp('2026-08-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-14 00:00:00'), side='LONG', entry=33.18000030517578, exit=32.459999084472656, qty=545.4793561742628, pnl=-392.7458023138239, reason='signal_flip', exit_timestamp=Timestamp('2026-09-14 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  17531.706175\n392 2026-09-14  17706.259402\n393 2026-09-15  17706.259402\n394 2026-09-16  17706.259402\n395 2026-09-17  17706.259402\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 5,
+      "slow_window": 20,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 17706.2594020153,
+    "return_pct": 77.06259402015301,
+    "rate_factor": 1.77062594020153,
+    "profit_factor": 1.9607887509318713,
+    "win_rate": 40.0,
+    "max_drawdown": 9893.17267077542,
+    "max_drawdown_pct": 36.56830768651068,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-08-07 00:00:00'), side='LONG', entry=14.579999923706056, exit=24.96999931335449, qty=685.8710598304395, pnl=7126.199893015791, reason='signal_flip', exit_timestamp=Timestamp('2025-08-07 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-21 00:00:00'), side='LONG', entry=25.729999542236328, exit=23.809999465942383, qty=665.6121336070286, pnl=-1277.9753473076705, reason='signal_flip', exit_timestamp=Timestamp('2025-08-21 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-10-03 00:00:00'), side='LONG', entry=26.61000061035156, exit=28.90999984741211, qty=595.5740015858174, pnl=1369.819749260479, reason='signal_flip', exit_timestamp=Timestamp('2025-10-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-10 00:00:00'), side='LONG', entry=29.38999938964844, exit=31.59000015258789, qty=585.8470449997025, pnl=1288.8639459651674, reason='signal_flip', exit_timestamp=Timestamp('2025-11-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-15 00:00:00'), side='LONG', entry=30.149999618530277, exit=25.239999771118164, qty=613.8278101190875, pnl=-3013.8944540220314, reason='signal_flip', exit_timestamp=Timestamp('2025-12-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-19 00:00:00'), side='LONG', entry=19.88999938964844, exit=18.3700008392334, qty=778.9348548182925, pnl=-1183.9798501915564, reason='signal_flip', exit_timestamp=Timestamp('2026-03-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-09 00:00:00'), side='LONG', entry=19.1200008392334, exit=27.059999465942383, qty=748.3804031722984, pnl=5942.139373443965, reason='signal_flip', exit_timestamp=Timestamp('2026-06-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-07-23 00:00:00'), side='LONG', entry=27.43000030517578, exit=25.450000762939453, qty=738.2855663455073, pnl=-1461.8050834037927, reason='signal_flip', exit_timestamp=Timestamp('2026-07-23 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-08-26 00:00:00'), side='LONG', entry=32.65999984741211, exit=31.459999084472656, qty=575.3021529254283, pnl=-690.363022431224, reason='signal_flip', exit_timestamp=Timestamp('2026-08-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-14 00:00:00'), side='LONG', entry=33.18000030517578, exit=32.459999084472656, qty=545.4793561742628, pnl=-392.7458023138239, reason='signal_flip', exit_timestamp=Timestamp('2026-09-14 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  17531.706175\n392 2026-09-14  17706.259402\n393 2026-09-15  17706.259402\n394 2026-09-16  17706.259402\n395 2026-09-17  17706.259402\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 5,
+      "slow_window": 20,
+      "tp_levels": [
+        0.02,
+        0.04,
+        0.06
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 17706.2594020153,
+    "return_pct": 77.06259402015301,
+    "rate_factor": 1.77062594020153,
+    "profit_factor": 1.9607887509318713,
+    "win_rate": 40.0,
+    "max_drawdown": 9893.17267077542,
+    "max_drawdown_pct": 36.56830768651068,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-08-07 00:00:00'), side='LONG', entry=14.579999923706056, exit=24.96999931335449, qty=685.8710598304395, pnl=7126.199893015791, reason='signal_flip', exit_timestamp=Timestamp('2025-08-07 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-21 00:00:00'), side='LONG', entry=25.729999542236328, exit=23.809999465942383, qty=665.6121336070286, pnl=-1277.9753473076705, reason='signal_flip', exit_timestamp=Timestamp('2025-08-21 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-10-03 00:00:00'), side='LONG', entry=26.61000061035156, exit=28.90999984741211, qty=595.5740015858174, pnl=1369.819749260479, reason='signal_flip', exit_timestamp=Timestamp('2025-10-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-10 00:00:00'), side='LONG', entry=29.38999938964844, exit=31.59000015258789, qty=585.8470449997025, pnl=1288.8639459651674, reason='signal_flip', exit_timestamp=Timestamp('2025-11-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-15 00:00:00'), side='LONG', entry=30.149999618530277, exit=25.239999771118164, qty=613.8278101190875, pnl=-3013.8944540220314, reason='signal_flip', exit_timestamp=Timestamp('2025-12-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-19 00:00:00'), side='LONG', entry=19.88999938964844, exit=18.3700008392334, qty=778.9348548182925, pnl=-1183.9798501915564, reason='signal_flip', exit_timestamp=Timestamp('2026-03-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-09 00:00:00'), side='LONG', entry=19.1200008392334, exit=27.059999465942383, qty=748.3804031722984, pnl=5942.139373443965, reason='signal_flip', exit_timestamp=Timestamp('2026-06-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-07-23 00:00:00'), side='LONG', entry=27.43000030517578, exit=25.450000762939453, qty=738.2855663455073, pnl=-1461.8050834037927, reason='signal_flip', exit_timestamp=Timestamp('2026-07-23 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-08-26 00:00:00'), side='LONG', entry=32.65999984741211, exit=31.459999084472656, qty=575.3021529254283, pnl=-690.363022431224, reason='signal_flip', exit_timestamp=Timestamp('2026-08-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-14 00:00:00'), side='LONG', entry=33.18000030517578, exit=32.459999084472656, qty=545.4793561742628, pnl=-392.7458023138239, reason='signal_flip', exit_timestamp=Timestamp('2026-09-14 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  17531.706175\n392 2026-09-14  17706.259402\n393 2026-09-15  17706.259402\n394 2026-09-16  17706.259402\n395 2026-09-17  17706.259402\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 5,
+      "slow_window": 20,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.01,
+        0.02
+      ]
+    }
+  },
+  {
+    "symbol": "FNGU",
+    "start": "2024-01-01",
+    "end": "2026-09-18",
+    "interval": "1d",
+    "initial_cash": 10000.0,
+    "final_equity": 17706.2594020153,
+    "return_pct": 77.06259402015301,
+    "rate_factor": 1.77062594020153,
+    "profit_factor": 1.9607887509318713,
+    "win_rate": 40.0,
+    "max_drawdown": 9893.17267077542,
+    "max_drawdown_pct": 36.56830768651068,
+    "trades": [
+      "Trade(timestamp=Timestamp('2025-08-07 00:00:00'), side='LONG', entry=14.579999923706056, exit=24.96999931335449, qty=685.8710598304395, pnl=7126.199893015791, reason='signal_flip', exit_timestamp=Timestamp('2025-08-07 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-08-21 00:00:00'), side='LONG', entry=25.729999542236328, exit=23.809999465942383, qty=665.6121336070286, pnl=-1277.9753473076705, reason='signal_flip', exit_timestamp=Timestamp('2025-08-21 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-10-03 00:00:00'), side='LONG', entry=26.61000061035156, exit=28.90999984741211, qty=595.5740015858174, pnl=1369.819749260479, reason='signal_flip', exit_timestamp=Timestamp('2025-10-03 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-11-10 00:00:00'), side='LONG', entry=29.38999938964844, exit=31.59000015258789, qty=585.8470449997025, pnl=1288.8639459651674, reason='signal_flip', exit_timestamp=Timestamp('2025-11-10 00:00:00'))",
+      "Trade(timestamp=Timestamp('2025-12-15 00:00:00'), side='LONG', entry=30.149999618530277, exit=25.239999771118164, qty=613.8278101190875, pnl=-3013.8944540220314, reason='signal_flip', exit_timestamp=Timestamp('2025-12-15 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-03-19 00:00:00'), side='LONG', entry=19.88999938964844, exit=18.3700008392334, qty=778.9348548182925, pnl=-1183.9798501915564, reason='signal_flip', exit_timestamp=Timestamp('2026-03-19 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-06-09 00:00:00'), side='LONG', entry=19.1200008392334, exit=27.059999465942383, qty=748.3804031722984, pnl=5942.139373443965, reason='signal_flip', exit_timestamp=Timestamp('2026-06-09 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-07-23 00:00:00'), side='LONG', entry=27.43000030517578, exit=25.450000762939453, qty=738.2855663455073, pnl=-1461.8050834037927, reason='signal_flip', exit_timestamp=Timestamp('2026-07-23 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-08-26 00:00:00'), side='LONG', entry=32.65999984741211, exit=31.459999084472656, qty=575.3021529254283, pnl=-690.363022431224, reason='signal_flip', exit_timestamp=Timestamp('2026-08-26 00:00:00'))",
+      "Trade(timestamp=Timestamp('2026-09-14 00:00:00'), side='LONG', entry=33.18000030517578, exit=32.459999084472656, qty=545.4793561742628, pnl=-392.7458023138239, reason='signal_flip', exit_timestamp=Timestamp('2026-09-14 00:00:00'))"
+    ],
+    "equity_curve": "     timestamp        equity\n0   2025-02-20  10000.000000\n1   2025-02-21  10000.000000\n2   2025-02-24  10000.000000\n3   2025-02-25  10000.000000\n4   2025-02-26  10000.000000\n..         ...           ...\n391 2026-09-11  17531.706175\n392 2026-09-14  17706.259402\n393 2026-09-15  17706.259402\n394 2026-09-16  17706.259402\n395 2026-09-17  17706.259402\n\n[396 rows x 2 columns]",
+    "strategy": "sma_crossover",
+    "params": {
+      "fast_window": 5,
+      "slow_window": 20,
+      "tp_levels": [
+        0.03,
+        0.05,
+        0.08
+      ],
+      "sl_levels": [
+        0.02,
+        0.03
+      ]
+    }
+  }
+]

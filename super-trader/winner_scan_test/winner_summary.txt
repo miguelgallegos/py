@@ -1,0 +1,38 @@
+========================================
+BEST WINNER REPORT
+========================================
+
+Symbol: SOXL
+
+Quick-scan winner:
+  - Fast window: 8
+  - Slow window: 30
+  - TP levels: (0.02, 0.04, 0.06)
+  - SL levels: (0.01, 0.02)
+
+Deep-scan winner:
+  - Fast window: 20
+  - Slow window: 30
+  - TP levels: (0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.08)
+  - SL levels: (0.005, 0.01, 0.015, 0.02, 0.025, 0.03)
+
+Performance:
+  - Return: 755.59%
+  - Final equity: $85,559.46
+
+Recommended live-trading starting config:
+  strategy: sma_crossover
+  symbol: SOXL
+  fast_window: 20
+  slow_window: 30
+  tp_levels: (0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.08)
+  sl_levels: (0.005, 0.01, 0.015, 0.02, 0.025, 0.03)
+
+Notes:
+  - SOXL came out best in the multi-symbol quick scan.
+  - The deep-scan profile improved the return materially and is the stronger candidate for a live starting configuration.
+  - This is a best-of-breed starting point; continue monitoring and re-optimization as the market regime changes.
+
+========================================
+END REPORT
+========================================
