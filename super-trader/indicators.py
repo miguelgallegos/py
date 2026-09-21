@@ -4,7 +4,9 @@ import pandas as pd
 
 
 def sma(series: pd.Series, window: int) -> pd.Series:
-    return series.rolling(window=window, min_periods=window).mean()
+    if window <= 1:
+        return series.copy()
+    return series.rolling(window=window, min_periods=1).mean()
 
 
 def ema(series: pd.Series, span: int) -> pd.Series:

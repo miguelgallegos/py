@@ -140,7 +140,7 @@ def run_optimizer(symbol: str, start: str, end: str, interval: str = "1d", strat
         "sl_levels": [(0.01, 0.02), (0.02, 0.03)],
     }
 
-    if strategy not in {"sma_crossover", "rsi", "macd", "bollinger"}:
+    if strategy not in {"sma_crossover", "rsi", "macd", "macd_sma", "bollinger"}:
         raise ValueError(f"Unsupported strategy '{strategy}'.")
 
     results: list[dict[str, Any]] = []
