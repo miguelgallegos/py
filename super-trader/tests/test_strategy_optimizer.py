@@ -49,6 +49,24 @@ class StrategyOptimizerTests(unittest.TestCase):
         self.assertIn("signal", signals.columns)
         self.assertTrue((signals["signal"].iloc[-1:] == 1).all())
 
+    def test_macd_sma_strategy_can_flip_signal_for_inverse_etfs(self) -> None:
+        df = pd.DataFrame({
+            "Close": [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111]
+        })
+        strategy = MacdSmaStrategy({
+            "macd_fast": 5,
+            "macd_slow": 10,
+            "macd_signal": 3,
+            "sma_fast": 8,
+            "sma_slow": 40,
+            "inverse_mode": True,
+        })
+
+        signals = strategy.generate_signals(df)
+
+        self.assertIn("signal", signals.columns)
+        self.assertTrue((signals["signal"].iloc[-1:] == -1).all())
+
 
 if __name__ == "__main__":
     unittest.main()

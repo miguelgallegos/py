@@ -40,19 +40,33 @@ class BacktestEngine:
             close = float(row["Close"])
             signal = int(row.get("signal", 0))
 
-            if position == 0 and signal == 1:
+            if position == 0 and signal in (1, -1):
                 qty = cash / close if cash > 0 else 0.0
                 if qty <= 0:
                     continue
-                cash -= qty * close
-                position = 1
-                entry_price = close
+                if signal == 1:
+                    cash -= qty * close
+                    position = 1
+                    entry_price = close
+                else:
+                    cash += qty * close
+                    position = -1
+                    entry_price = close
             elif position == 1 and signal == -1:
                 pnl = (close - entry_price) * qty
                 trade = Trade(idx, "LONG", entry_price, close, qty, pnl, "signal_flip")
                 trade.exit_timestamp = idx
                 trades.append(trade)
                 cash += qty * close
+                position = 0
+                qty = 0.0
+                entry_price = 0.0
+            elif position == -1 and signal == 1:
+                pnl = (entry_price - close) * qty
+                trade = Trade(idx, "SHORT", entry_price, close, qty, pnl, "signal_flip")
+                trade.exit_timestamp = idx
+                trades.append(trade)
+                cash -= qty * close
                 position = 0
                 qty = 0.0
                 entry_price = 0.0
@@ -66,6 +80,16 @@ class BacktestEngine:
             trade.exit_timestamp = signal_df.index[-1]
             trades.append(trade)
             cash += qty * final_close
+            position = 0
+            qty = 0.0
+            entry_price = 0.0
+        elif position == -1 and qty > 0:
+            final_close = float(signal_df["Close"].iloc[-1])
+            pnl = (entry_price - final_close) * qty
+            trade = Trade(signal_df.index[-1], "SHORT", entry_price, final_close, qty, pnl, "end_of_data")
+            trade.exit_timestamp = signal_df.index[-1]
+            trades.append(trade)
+            cash -= qty * final_close
             position = 0
             qty = 0.0
             entry_price = 0.0

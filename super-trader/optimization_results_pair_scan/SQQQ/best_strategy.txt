@@ -1,0 +1,24 @@
+Best strategy candidate
+Timestamp: 2026-09-21T22:49:56Z
+Symbol: SQQQ
+Range: 2024-01-01 to 2026-09-21
+Interval: 1d
+
+Recommended parameters:
+- inverse_mode: True
+- macd_fast: 12
+- macd_signal: 9
+- macd_slow: 26
+- sl_levels: (0.01, 0.02)
+- sma_fast: 20
+- sma_slow: 50
+- tp_levels: (0.02, 0.04, 0.06)
+
+Performance:
+- Final equity: $4,177.07
+- Return: -58.23%
+- Rate factor: 0.42x
+- Profit factor: 0.60x
+- Win rate: 62.50%
+- Max drawdown: $12,267.88
+- Trades: 16

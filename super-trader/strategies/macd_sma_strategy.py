@@ -18,6 +18,7 @@ class MacdSmaStrategy(Strategy):
         self.macd_signal = int((config or {}).get("macd_signal", 9))
         self.sma_fast = int((config or {}).get("sma_fast", 8))
         self.sma_slow = int((config or {}).get("sma_slow", 40))
+        self.inverse_mode = bool((config or {}).get("inverse_mode", False))
 
     def generate_signals(self, df: pd.DataFrame) -> pd.DataFrame:
         data = df.copy()
@@ -47,9 +48,13 @@ class MacdSmaStrategy(Strategy):
             (data["sma_fast"] < data["sma_slow"])
         )
 
-        data.loc[bullish, "signal"] = 1
-        data.loc[bearish & (data["signal"] == 0), "signal"] = -1
-        data.loc[data["sma_fast"].isna() | data["sma_slow"].isna(), "signal"] = 0
+        if self.inverse_mode:
+            data.loc[bullish, "signal"] = -1
+            data.loc[bearish & (data["signal"] == 0), "signal"] = 1
+        else:
+            data.loc[bullish, "signal"] = 1
+            data.loc[bearish & (data["signal"] == 0), "signal"] = -1
 
+        data.loc[data["sma_fast"].isna() | data["sma_slow"].isna(), "signal"] = 0
         data["signal"] = data["signal"].fillna(0).astype(int)
         return data

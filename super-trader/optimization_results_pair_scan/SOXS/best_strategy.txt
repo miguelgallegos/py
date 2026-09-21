@@ -1,0 +1,24 @@
+Best strategy candidate
+Timestamp: 2026-09-21T22:50:01Z
+Symbol: SOXS
+Range: 2024-01-01 to 2026-09-21
+Interval: 1d
+
+Recommended parameters:
+- inverse_mode: True
+- macd_fast: 12
+- macd_signal: 9
+- macd_slow: 26
+- sl_levels: (0.01, 0.02)
+- sma_fast: 8
+- sma_slow: 40
+- tp_levels: (0.02, 0.04, 0.06)
+
+Performance:
+- Final equity: $27.86
+- Return: -99.72%
+- Rate factor: 0.00x
+- Profit factor: 0.59x
+- Win rate: 73.91%
+- Max drawdown: $18,908.72
+- Trades: 23

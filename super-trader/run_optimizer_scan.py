@@ -11,6 +11,14 @@ from strategy_optimizer import render_summary, run_optimizer, select_best_result
 
 
 
+def parse_bool_value(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        return value.strip().lower() in {"1", "true", "yes", "on"}
+    return bool(value)
+
+
 def normalize_trade_record(trade: Any) -> dict[str, Any]:
     if isinstance(trade, dict):
         record = dict(trade)
@@ -126,6 +134,8 @@ def build_parameter_map(args: argparse.Namespace) -> dict:
         param_map["window"] = [int(v) for v in args.window.split(",") if v.strip()]
     if hasattr(args, "k") and args.k:
         param_map["k"] = [float(v) for v in args.k.split(",") if v.strip()]
+    if hasattr(args, "inverse_mode") and args.inverse_mode is not None:
+        param_map["inverse_mode"] = [parse_bool_value(args.inverse_mode)]
     if hasattr(args, "tp_levels") and args.tp_levels:
         param_map["tp_levels"] = [tuple(float(x) for x in chunk.split(",") if x.strip()) for chunk in args.tp_levels.split(";") if chunk.strip()]
     if hasattr(args, "sl_levels") and args.sl_levels:
@@ -172,6 +182,7 @@ def main() -> None:
     parser.add_argument("--macd-signal", default=None)
     parser.add_argument("--sma-fast", default=None)
     parser.add_argument("--sma-slow", default=None)
+    parser.add_argument("--inverse-mode", action="store_true", help="Trade inverse ETFs by flipping the signal logic for bearish bull/bear alignment.")
     parser.add_argument("--max-results", type=int, default=None)
     args = parser.parse_args()
 
@@ -212,6 +223,8 @@ def main() -> None:
         preset["sma_fast"] = args.sma_fast
     if args.sma_slow:
         preset["sma_slow"] = args.sma_slow
+    if args.inverse_mode:
+        preset["inverse_mode"] = True
     if args.max_results:
         preset["max_results"] = args.max_results
 
@@ -234,6 +247,7 @@ def main() -> None:
         "macd_signal",
         "sma_fast",
         "sma_slow",
+        "inverse_mode",
     ]:
         if key not in preset:
             continue
@@ -242,6 +256,8 @@ def main() -> None:
             param_map[key] = [int(v) for v in str(value).split(",") if v.strip()]
         elif key in {"oversold", "overbought", "k"}:
             param_map[key] = [float(v) for v in str(value).split(",") if v.strip()]
+        elif key == "inverse_mode":
+            param_map[key] = [parse_bool_value(value)]
         elif key in {"tp_levels", "sl_levels"}:
             param_map[key] = [tuple(float(x) for x in chunk.split(",") if x.strip()) for chunk in str(value).split(";") if chunk.strip()]
 
